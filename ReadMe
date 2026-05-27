@@ -1,0 +1,5 @@
+dotnet ef migrations add InitialCreate --project src/Backend.Infrastructure --startup-project src/Backend.Api
+
+dotnet ef database update --project src/Backend.Infrastructure --startup-project src/Backend.Api
+
+dotnet watch --project src/Backend.Api/Backend.Api.csproj run
