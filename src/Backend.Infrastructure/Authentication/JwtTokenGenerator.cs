@@ -6,20 +6,24 @@ using Backend.Application.Interfaces;
 using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
 using Backend.Application.Common.Settings;
+using Microsoft.AspNetCore.Identity;
 
 namespace Backend.Infrastructure.Authentication;
 
 public class JwtTokenGenerator : IJwtTokenGenerator
 {
     private readonly JwtSettings _jwtSettings;
+    private readonly UserManager<User> _userManager;
 
-    public JwtTokenGenerator(IOptions<JwtSettings> jwtOptions)
+    public JwtTokenGenerator(IOptions<JwtSettings> jwtOptions, UserManager<User> userManager)
     {
         _jwtSettings = jwtOptions.Value;
+        _userManager = userManager;
     }
 
-    public string GenerateToken(User user)
+    public async Task<string> GenerateToken(User user)
     {
+        var roles = await _userManager.GetRolesAsync(user);
         var claims = new List<Claim>
         {
             new Claim(JwtRegisteredClaimNames.Sub, user.Id.ToString()),
@@ -39,6 +43,10 @@ public class JwtTokenGenerator : IJwtTokenGenerator
             new Claim(JwtRegisteredClaimNames.Jti,
                 Guid.NewGuid().ToString())
         };
+
+        claims.AddRange(roles.Select(role =>
+            new Claim(ClaimTypes.Role, role)
+        ));
 
         var key = new SymmetricSecurityKey(
             Encoding.UTF8.GetBytes(_jwtSettings.Key)

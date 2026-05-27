@@ -23,6 +23,7 @@ using Backend.Infrastructure.Authentication;
 using Microsoft.AspNetCore.Mvc;
 using Backend.Application.Common.Results;
 using System.Net;
+using System.Security.Claims;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -95,9 +96,9 @@ builder.Services.AddSwaggerGen(options =>
         "v1",
         new OpenApiInfo
         {
-            Title = "Backend Service API",
+            Title = "FintechBackend Service API",
             Version = "v1",
-            Description = "Backend Service v1"
+            Description = "FintechBackend Service v1"
         }
     );
 
@@ -105,9 +106,9 @@ builder.Services.AddSwaggerGen(options =>
         "v2",
         new OpenApiInfo
         {
-            Title = "Backend Service API",
+            Title = "FintechBackend Service API",
             Version = "v2",
-            Description = "Backend Service v2"
+            Description = "FintechBackend Service v2"
         }
     );
 
@@ -115,9 +116,9 @@ builder.Services.AddSwaggerGen(options =>
         "v3",
         new OpenApiInfo
         {
-            Title = "Backend Service API",
+            Title = "FintechBackend Service API",
             Version = "v3",
-            Description = "Backend Service API v3"
+            Description = "FintechBackend Service API v3"
         }
     );
 
@@ -167,7 +168,7 @@ builder.Services.Configure<RedisSettings>(builder.Configuration.GetSection("Redi
 builder.Services.AddStackExchangeRedisCache(options =>
 {
     options.Configuration = builder.Configuration["Redis:Configuration"] ?? "localhost:6379";
-    options.InstanceName = builder.Configuration["Redis:InstanceName"] ?? "BackendCache:";
+    options.InstanceName = builder.Configuration["Redis:InstanceName"] ?? "FintechBackendCache:";
 });
 
 builder.Services.AddScoped<CacheService>();
@@ -211,6 +212,7 @@ builder.Services.AddIdentity<User, IdentityRole<int>>(options =>
     options.Password.RequireLowercase = true;
     options.User.RequireUniqueEmail = true;
 })
+.AddRoles<IdentityRole<int>>()
 .AddEntityFrameworkStores<AppDbContext>()
 .AddDefaultTokenProviders();
 
@@ -251,7 +253,10 @@ builder.Services.AddAuthentication(options =>
 
         ValidateLifetime = true,
 
-        ClockSkew = TimeSpan.Zero
+        ClockSkew = TimeSpan.Zero,
+
+        RoleClaimType = ClaimTypes.Role,
+        NameClaimType = ClaimTypes.NameIdentifier
     };
 });
 
@@ -268,6 +273,11 @@ if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
     app.UseSwaggerUI();
+}
+
+using (var scope = app.Services.CreateScope())
+{
+    await IdentitySeeder.SeedRolesAsync(scope.ServiceProvider);
 }
 
 app.UseHttpsRedirection();

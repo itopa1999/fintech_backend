@@ -1,19 +1,21 @@
+using System.ComponentModel.DataAnnotations;
+
 namespace Backend.Domain.Common;
 
-public interface IBaseEntity
+public abstract class BaseEntity
 {
-    int Id { get; set; }
-    DateTime CreatedAt { get; set; }
-    DateTime? ModifiedAt { get; set; }
-    bool IsDeleted { get; set; }
-    DateTime? DeletedAt { get; set; }
-}
-
-public abstract class BaseEntity : IBaseEntity
-{
-    public int Id { get; set; }
     public DateTime CreatedAt { get; set; }
     public DateTime? ModifiedAt { get; set; }
+
     public bool IsDeleted { get; set; }
     public DateTime? DeletedAt { get; set; }
+
+    [MaxLength(100)]
+    public string? CreatedBy { get; set; }
+
+    [MaxLength(100)]
+    public string? ModifiedBy { get; set; }
+
+    [MaxLength(100)]
+    public string? DeletedBy { get; set; }
 }

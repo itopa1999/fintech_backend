@@ -77,7 +77,7 @@ public class LoginUserCommand
                 Id = user.Id,
                 Email = user.Email ?? string.Empty,
                 FullName = user.FullName,
-                Token = token,
+                // Token = token,
                 ExpiresAt = DateTime.UtcNow.AddDays(7)
             };
 
