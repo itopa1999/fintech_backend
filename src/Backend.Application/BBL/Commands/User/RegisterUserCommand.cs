@@ -24,7 +24,7 @@ public class RegisterUserCommand
 
     public class ResponseDto
     {
-        public string UserId { get; set; }
+        public int UserId { get; set; }
         public string Email { get; set; }
         public string FullName { get; set; }
         public string Role { get; set; }
@@ -148,7 +148,7 @@ public class RegisterUserCommand
 
             var response = new ResponseDto
             {
-                UserId = user.Id.ToString(),
+                UserId = user.Id,
                 Email = user.Email,
                 FullName = user.FullName,
                 Role = roleName,

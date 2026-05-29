@@ -5,6 +5,9 @@ using Backend.Application.DTOs.Auth;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using Backend.Api.Extensions;
+using static Backend.Application.Commands.RegisterUserCommand;
+using static Backend.Application.BBL.Commands.User.RefreshTokenCommand;
+using Backend.Application.BBL.Commands.User;
 
 namespace Backend.Api.Controllers;
 
@@ -22,7 +25,7 @@ public class AuthController : ControllerBase
     }
 
     [HttpPost("register")]
-    [ProducesResponseType(typeof(BaseResult), (int)HttpStatusCode.OK)]
+    [ProducesResponseType(typeof(BaseResult<ResponseDto>), (int)HttpStatusCode.OK)]
     [ProducesResponseType(typeof(BaseResult), (int)HttpStatusCode.BadRequest)]
     public async Task<ActionResult<BaseResult>> RegisterUSer([FromBody] RegisterUserDto dto, CancellationToken cancellationToken)
     {
@@ -41,6 +44,20 @@ public class AuthController : ControllerBase
         return result.ToActionResult();
     }
 
+    [HttpPost("verify-token")]
+    [ProducesResponseType(typeof(BaseResult), (int)HttpStatusCode.OK)]
+    [ProducesResponseType(typeof(BaseResult), (int)HttpStatusCode.BadRequest)]
+    public async Task<ActionResult<BaseResult>> VerifyToken([FromBody] VerifyTokenDto dto, CancellationToken cancellationToken)
+    {
+        var command = new VerifyUserCommand.Command
+        {
+            UserId = dto.UserId,
+            Token = dto.Token
+        };
+        var result = await _mediator.Send(command, cancellationToken);
+        return result.ToActionResult();
+    }
+
     [HttpPost("login")]
     [ProducesResponseType(typeof(BaseResult<AuthResponseDto>), (int)HttpStatusCode.OK)]
     [ProducesResponseType(typeof(BaseResult), (int)HttpStatusCode.BadRequest)]
@@ -53,5 +70,35 @@ public class AuthController : ControllerBase
         };
         var result = await _mediator.Send(command, cancellationToken);
         return result.ToActionResult();
+    }
+
+    [HttpPost("refresh-token")]
+    [ProducesResponseType(typeof(BaseResult<RefreshRespondDto>), (int)HttpStatusCode.OK)]
+    [ProducesResponseType(typeof(BaseResult), (int)HttpStatusCode.Unauthorized)]
+    [ProducesResponseType(typeof(BaseResult), (int)HttpStatusCode.BadRequest)]
+    public async Task<ActionResult<BaseResult>> RefreshToken([FromBody] RefreshRequest request, CancellationToken cancellationToken)
+    {
+        var command = new RefreshTokenCommand.Command
+        {
+            RefreshToken = request.RefreshToken.Trim()
+        };
+        var result = await _mediator.Send(command, cancellationToken);
+        return result.ToActionResult();
+
+    }
+
+    [HttpPost("logout")]
+    [ProducesResponseType(typeof(BaseResult), (int)HttpStatusCode.OK)]
+    [ProducesResponseType(typeof(BaseResult), (int)HttpStatusCode.Unauthorized)]
+    [ProducesResponseType(typeof(BaseResult), (int)HttpStatusCode.BadRequest)]
+    public async Task<ActionResult<BaseResult>> Logout([FromBody] RefreshRequest request, CancellationToken cancellationToken)
+    {
+        var command = new LogoutCommand.Command
+        {
+            RefreshToken = request.RefreshToken.Trim()
+        };
+        var result = await _mediator.Send(command, cancellationToken);
+        return result.ToActionResult();
+
     }
 }

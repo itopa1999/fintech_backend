@@ -5,9 +5,11 @@ using Backend.Application.DTOs.Auth;
 using Backend.Application.Interfaces;
 using Backend.Domain.Common;
 using Backend.Domain.Entities;
+using Backend.Domain.Persistence;
 using MediatR;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.Logging;
+using Microsoft.Identity.Client;
 
 namespace Backend.Application.Commands;
 
@@ -24,15 +26,21 @@ public class LoginUserCommand
         private readonly UserManager<User> _userManager;
         private readonly IJwtTokenGenerator _jwtTokenGenerator;
         private readonly ILogger<Handler> _logger;
+        private readonly AppDbContext _context;
+        private readonly ITokenService _token;
 
         public Handler(
             UserManager<User> userManager,
             IJwtTokenGenerator jwtTokenGenerator,
-            ILogger<Handler> logger)
+            ILogger<Handler> logger,
+            AppDbContext appContext,
+            ITokenService token)
         {
             _userManager = userManager;
             _jwtTokenGenerator = jwtTokenGenerator;
             _logger = logger;
+            _context = appContext;
+            _token = token;
         }
 
         public async Task<BaseResult<AuthResponseDto>> Handle(
@@ -116,8 +124,19 @@ public class LoginUserCommand
             }
 
             var token = await _jwtTokenGenerator.GenerateToken(user);
-
             var roles = await _userManager.GetRolesAsync(user);
+            var refreshToken = _token.GenerateRefreshToken();
+            var hashedRefreshToken = _token.HashToken(refreshToken);
+            var entity = new RefreshToken
+            {
+                Token = hashedRefreshToken,
+                UserId = user.Id,
+                CreatedAt = DateTime.UtcNow,
+                ExpiresAt = DateTime.UtcNow.AddDays(7)
+            };
+
+            _context.RefreshTokens.Add(entity);
+            await _context.SaveChangesAsync(cancellationToken);
 
             var response = new AuthResponseDto
             {
@@ -125,6 +144,7 @@ public class LoginUserCommand
                 Email = user.Email,
                 FullName = user.FullName,
                 Token = token,
+                RefreshToken = refreshToken,
                 Role = roles.FirstOrDefault() ?? string.Empty,
                 KycTier = user.KycTier,
                 Status = user.Status.ToString(),

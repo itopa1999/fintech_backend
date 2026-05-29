@@ -12,6 +12,7 @@ public class AuthResponseDto
     public int KycTier { get; set; }
     public string Status { get; set; }
     public string Token { get; set; }
+    public string RefreshToken { get; set; }
 
 }
 
@@ -26,4 +27,16 @@ public class LoginUserDto
     [DataType(DataType.Password)]
     public string Password { get; set; }
 
+}
+
+public class VerifyTokenDto
+{
+    public int UserId { get; set; }
+    public int Token { get; set; }
+}
+
+public class RefreshRequest
+{
+    [Required(ErrorMessage = "Refresh token is required")]
+    public string RefreshToken { get; set; }
 }

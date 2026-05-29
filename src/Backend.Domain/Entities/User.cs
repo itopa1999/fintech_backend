@@ -7,7 +7,6 @@ namespace Backend.Domain.Entities;
 [Table("Users")]
 public class User : IdentityUser<int>
 {
-    public int UserId { get; set; }
     public string? FirstName { get; set; }
     public string? LastName { get; set; }
     public string? MiddleName { get; set; }

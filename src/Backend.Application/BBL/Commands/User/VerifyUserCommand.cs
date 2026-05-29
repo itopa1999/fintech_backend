@@ -28,6 +28,13 @@ public class VerifyUserCommand
 
         public async Task<BaseResult> Handle(Command request, CancellationToken cancellationToken)
         {
+            if (request.Token <= 0 || request.UserId <= 0)
+            {
+                _logger.LogWarning("Invalid token value: {Token} for user {UserId}", request.Token, request.UserId);
+
+                return new BaseResult(HttpStatusCode.BadRequest, "Invalid token.");
+            }
+
             var record = await _context.VerificationTokens
                 .FirstOrDefaultAsync(x =>
                     x.UserId == request.UserId &&

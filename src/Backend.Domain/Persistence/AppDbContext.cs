@@ -13,14 +13,12 @@ public class AppDbContext : IdentityDbContext<User, IdentityRole<int>, int>
         : base(options)
     {
     }
-    public DbSet<VerificationToken> VerificationTokens { get; set; }
+    public DbSet<VerificationToken> VerificationTokens { get; set; }    
     public DbSet<Device> Devices { get; set; }
-
     public DbSet<BankAccount> BankAccounts { get; set; }
-
     public DbSet<UserAddress> UserAddresses { get; set; }
-
     public DbSet<KycProfile> KycProfiles { get; set; }
+    public DbSet<RefreshToken> RefreshTokens { get; set; }
 
     protected override void OnModelCreating(ModelBuilder builder)
     {
@@ -61,7 +59,25 @@ public class AppDbContext : IdentityDbContext<User, IdentityRole<int>, int>
             .WithMany()
             .HasForeignKey(x => x.UserId)
             .IsRequired(false)
-            .OnDelete(DeleteBehavior.SetNull);
+            .OnDelete(DeleteBehavior.Cascade);
+        });
+
+        builder.Entity<RefreshToken>(refreshToken =>
+        {
+            refreshToken.ToTable("RefreshTokens");
+            refreshToken.HasKey(x => x.Id);
+            refreshToken.Property(x => x.Token)
+                .IsRequired()
+                .HasMaxLength(1000);
+            refreshToken.Property(x => x.ExpiresAt)
+                .IsRequired();
+            refreshToken.Property(x => x.RevokedAt)
+                .IsRequired(false);
+            refreshToken.HasOne(x => x.User)
+                .WithMany()
+                .HasForeignKey(x => x.UserId)
+                .IsRequired()
+                .OnDelete(DeleteBehavior.Cascade);
         });
 
         builder.Entity<Device>(device =>

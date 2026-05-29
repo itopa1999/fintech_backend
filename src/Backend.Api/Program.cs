@@ -171,7 +171,6 @@ builder.Services.AddStackExchangeRedisCache(options =>
     options.InstanceName = builder.Configuration["Redis:InstanceName"] ?? "FintechBackendCache:";
 });
 
-builder.Services.AddScoped<CacheService>();
 
 // DB connection string 
 var databaseProvider = builder.Configuration.GetValue<string>("DatabaseProvider")?.Trim().ToLowerInvariant();
@@ -221,7 +220,6 @@ builder.Services.Configure<JwtSettings>(
     builder.Configuration.GetSection("JwtSettings")
 );
 
-builder.Services.AddScoped<IJwtTokenGenerator, JwtTokenGenerator>();
 
 var jwtSettings = builder.Configuration
     .GetSection("JwtSettings")
@@ -264,6 +262,9 @@ builder.Services.AddAuthentication(options =>
 builder.Services.AddAuthorization();
 
 
+builder.Services.AddScoped<IJwtTokenGenerator, JwtTokenGenerator>();
+builder.Services.AddScoped<CacheService>();
+builder.Services.AddScoped<ITokenService, TokenService>();
 
 var app = builder.Build();
 
