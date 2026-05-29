@@ -3,7 +3,7 @@ using Backend.Application.Common.Helpers;
 using Backend.Application.Common.Settings;
 using Backend.Api.Middleware;
 using Backend.Domain.Entities;
-using Backend.Infrastructure.Persistence;
+using Backend.Domain.Persistence;
 using Backend.Infrastructure.Filters;
 using HealthChecks.UI.Client;
 using MediatR;

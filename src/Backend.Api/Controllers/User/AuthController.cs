@@ -1,7 +1,7 @@
 using System.Net;
 using Backend.Application.Commands;
 using Backend.Application.Common.Results;
-using Backend.Application.DTOs;
+using Backend.Application.DTOs.Auth;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using Backend.Api.Extensions;
@@ -24,18 +24,19 @@ public class AuthController : ControllerBase
     [HttpPost("register")]
     [ProducesResponseType(typeof(BaseResult), (int)HttpStatusCode.OK)]
     [ProducesResponseType(typeof(BaseResult), (int)HttpStatusCode.BadRequest)]
-    public async Task<ActionResult<BaseResult>> RegisterUSer([FromBody] RegisterUserDto dto)
+    public async Task<ActionResult<BaseResult>> RegisterUSer([FromBody] RegisterUserDto dto, CancellationToken cancellationToken)
     {
 
         var command = new RegisterUserCommand.Command
         {
-            FirstName = dto.FirstName,
-            LastName = dto.LastName,
-            Email = dto.Email,
-            Password = dto.Password
+            FirstName = dto.FirstName.Trim(),
+            LastName = dto.LastName.Trim(),
+            Email = dto.Email.Trim(),
+            Password = dto.Password.Trim(),
+            RoleType = dto.RoleType
         };
 
-        var result = await _mediator.Send(command);
+        var result = await _mediator.Send(command, cancellationToken);
 
         return result.ToActionResult();
     }
@@ -43,14 +44,14 @@ public class AuthController : ControllerBase
     [HttpPost("login")]
     [ProducesResponseType(typeof(BaseResult<AuthResponseDto>), (int)HttpStatusCode.OK)]
     [ProducesResponseType(typeof(BaseResult), (int)HttpStatusCode.BadRequest)]
-    public async Task<ActionResult<BaseResult>> LoginUser([FromBody] LoginUserDto dto)
+    public async Task<ActionResult<BaseResult>> LoginUser([FromBody] LoginUserDto dto, CancellationToken cancellationToken)
     {
         var command = new LoginUserCommand.Command
         {
-            Email = dto.Email,
-            Password = dto.Password
+            Email = dto.Email.Trim(),
+            Password = dto.Password.Trim()
         };
-        var result = await _mediator.Send(command);
+        var result = await _mediator.Send(command, cancellationToken);
         return result.ToActionResult();
     }
 }

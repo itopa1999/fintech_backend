@@ -5,7 +5,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
-namespace Backend.Infrastructure.Persistence;
+namespace Backend.Domain.Persistence;
 
 public class AppDbContext : IdentityDbContext<User, IdentityRole<int>, int>
 {
@@ -13,6 +13,7 @@ public class AppDbContext : IdentityDbContext<User, IdentityRole<int>, int>
         : base(options)
     {
     }
+    public DbSet<VerificationToken> VerificationTokens { get; set; }
     public DbSet<Device> Devices { get; set; }
 
     public DbSet<BankAccount> BankAccounts { get; set; }
@@ -51,11 +52,16 @@ public class AppDbContext : IdentityDbContext<User, IdentityRole<int>, int>
                 .IsUnique(true);
             token.Property(x => x.Token)
                 .IsRequired()
-                .HasMaxLength(1000);
+                .HasMaxLength(8);
             token.Property(x => x.ExpiresAt)
                 .IsRequired();
             token.Property(x => x.IsUsed)
                 .IsRequired();
+            token.HasOne(x => x.User)
+            .WithMany()
+            .HasForeignKey(x => x.UserId)
+            .IsRequired(false)
+            .OnDelete(DeleteBehavior.SetNull);
         });
 
         builder.Entity<Device>(device =>
