@@ -32,11 +32,19 @@ public class LoginUserDto
 public class VerifyTokenDto
 {
     public int UserId { get; set; }
-    public int Token { get; set; }
+    public string Token { get; set; }
 }
 
-public class RefreshRequest
+public class RefreshRequestDto
 {
     [Required(ErrorMessage = "Refresh token is required")]
     public string RefreshToken { get; set; }
+}
+
+public class ForgotPasswordDto
+{
+    [Required(ErrorMessage = "Email is required")]
+    [EmailAddress(ErrorMessage = "Invalid email address format")]
+    [MaxLength(256, ErrorMessage = "Email cannot exceed 256 characters")]
+    public string Email { get; set; }
 }

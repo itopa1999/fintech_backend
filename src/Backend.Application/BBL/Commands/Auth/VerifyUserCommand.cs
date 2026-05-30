@@ -6,13 +6,13 @@ using MediatR;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 
-namespace Backend.Application.Commands;
+namespace Backend.Application.BBL.Commands.Auth;
 public class VerifyUserCommand
 {
     public class Command : IRequest<BaseResult>
     {
         public int UserId { get; set; }
-        public int Token { get; set; }
+        public string Token { get; set; }
     }
 
     public class Handler : IRequestHandler<Command, BaseResult>
@@ -28,7 +28,7 @@ public class VerifyUserCommand
 
         public async Task<BaseResult> Handle(Command request, CancellationToken cancellationToken)
         {
-            if (request.Token <= 0 || request.UserId <= 0)
+            if (string.IsNullOrEmpty(request.Token) || request.UserId <= 0)
             {
                 _logger.LogWarning("Invalid token value: {Token} for user {UserId}", request.Token, request.UserId);
 

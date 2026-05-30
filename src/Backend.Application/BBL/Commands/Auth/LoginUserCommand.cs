@@ -9,9 +9,8 @@ using Backend.Domain.Persistence;
 using MediatR;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.Logging;
-using Microsoft.Identity.Client;
 
-namespace Backend.Application.Commands;
+namespace Backend.Application.BBL.Commands.Auth;
 
 public class LoginUserCommand
 {

@@ -5,7 +5,7 @@ using Backend.Domain.Persistence;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
 
-namespace Backend.Application.BBL.Commands.User;
+namespace Backend.Application.BBL.Commands.Auth;
 
 public class LogoutCommand
 {

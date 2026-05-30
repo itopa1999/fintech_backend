@@ -1,13 +1,12 @@
 using System.Net;
-using Backend.Application.Commands;
 using Backend.Application.Common.Results;
 using Backend.Application.DTOs.Auth;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using Backend.Api.Extensions;
-using static Backend.Application.Commands.RegisterUserCommand;
-using static Backend.Application.BBL.Commands.User.RefreshTokenCommand;
-using Backend.Application.BBL.Commands.User;
+using static Backend.Application.BBL.Commands.Auth.RegisterUserCommand;
+using Backend.Application.BBL.Commands.Auth;
+using static Backend.Application.BBL.Commands.Auth.RefreshTokenCommand;
 
 namespace Backend.Api.Controllers;
 
@@ -76,7 +75,7 @@ public class AuthController : ControllerBase
     [ProducesResponseType(typeof(BaseResult<RefreshRespondDto>), (int)HttpStatusCode.OK)]
     [ProducesResponseType(typeof(BaseResult), (int)HttpStatusCode.Unauthorized)]
     [ProducesResponseType(typeof(BaseResult), (int)HttpStatusCode.BadRequest)]
-    public async Task<ActionResult<BaseResult>> RefreshToken([FromBody] RefreshRequest request, CancellationToken cancellationToken)
+    public async Task<ActionResult<BaseResult>> RefreshToken([FromBody] RefreshRequestDto request, CancellationToken cancellationToken)
     {
         var command = new RefreshTokenCommand.Command
         {
@@ -91,7 +90,7 @@ public class AuthController : ControllerBase
     [ProducesResponseType(typeof(BaseResult), (int)HttpStatusCode.OK)]
     [ProducesResponseType(typeof(BaseResult), (int)HttpStatusCode.Unauthorized)]
     [ProducesResponseType(typeof(BaseResult), (int)HttpStatusCode.BadRequest)]
-    public async Task<ActionResult<BaseResult>> Logout([FromBody] RefreshRequest request, CancellationToken cancellationToken)
+    public async Task<ActionResult<BaseResult>> Logout([FromBody] RefreshRequestDto request, CancellationToken cancellationToken)
     {
         var command = new LogoutCommand.Command
         {
@@ -99,6 +98,18 @@ public class AuthController : ControllerBase
         };
         var result = await _mediator.Send(command, cancellationToken);
         return result.ToActionResult();
+    }
 
+    [HttpPost("forgot-password")]
+    [ProducesResponseType(typeof(BaseResult), (int)HttpStatusCode.OK)]
+    [ProducesResponseType(typeof(BaseResult), (int)HttpStatusCode.BadRequest)]
+    public async Task<ActionResult<BaseResult>> ForgotPassword([FromBody] ForgotPasswordDto dto, CancellationToken cancellationToken)
+    {
+        var command = new ForgotPasswordCommand.Command
+        {
+            Email = dto.Email.Trim()
+        };
+        var result = await _mediator.Send(command, cancellationToken);
+        return result.ToActionResult();
     }
 }

@@ -50,7 +50,7 @@ public class AppDbContext : IdentityDbContext<User, IdentityRole<int>, int>
                 .IsUnique(true);
             token.Property(x => x.Token)
                 .IsRequired()
-                .HasMaxLength(8);
+                .HasMaxLength(6);
             token.Property(x => x.ExpiresAt)
                 .IsRequired();
             token.Property(x => x.IsUsed)

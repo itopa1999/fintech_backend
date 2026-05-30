@@ -2,6 +2,7 @@ using System.Net;
 using System.Security.Cryptography;
 using Backend.Application.Common.Helpers;
 using Backend.Application.Common.Results;
+using Backend.Application.Interfaces;
 using Backend.Domain.Common;
 using Backend.Domain.Entities;
 using Backend.Domain.Persistence;
@@ -9,7 +10,7 @@ using MediatR;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.Logging;
 
-namespace Backend.Application.Commands;
+namespace Backend.Application.BBL.Commands.Auth;
 
 public class RegisterUserCommand
 {
@@ -35,15 +36,18 @@ public class RegisterUserCommand
         private readonly UserManager<User> _userManager;
         private readonly AppDbContext _context;
         private readonly ILogger<Handler> _logger;
+        private readonly IEmailService _emailService;
 
         public Handler(
             UserManager<User> userManager,
             AppDbContext context,
-            ILogger<Handler> logger)
+            ILogger<Handler> logger,
+            IEmailService emailService)
         {
             _userManager = userManager;
             _context = context;
             _logger = logger;
+            _emailService = emailService;
         }
 
         public async Task<BaseResult<ResponseDto>> Handle(Command request, CancellationToken cancellationToken)
@@ -130,13 +134,13 @@ public class RegisterUserCommand
 
             _logger.LogInformation("Verification token generated for user {Email}", request.Email);
 
-            Console.WriteLine($"VERIFY TOKEN: {token}");
+            await _emailService.SendVerificationOtpAsync(user.Email, token.ToString());
 
             var verificationToken = new VerificationToken
             {
-                Token = token,
+                Token = token.ToString(),
                 UserId = user.Id,
-                ExpiresAt = DateTime.UtcNow.AddHours(24),
+                ExpiresAt = DateTime.UtcNow.AddMinutes(10),
                 IsUsed = false,
                 CreatedAt = DateTime.UtcNow
             };

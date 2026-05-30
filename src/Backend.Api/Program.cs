@@ -24,6 +24,8 @@ using Microsoft.AspNetCore.Mvc;
 using Backend.Application.Common.Results;
 using System.Net;
 using System.Security.Claims;
+using Infrastructure.Email.Models;
+using Backend.Infrastructure.Email;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -171,6 +173,9 @@ builder.Services.AddStackExchangeRedisCache(options =>
     options.InstanceName = builder.Configuration["Redis:InstanceName"] ?? "FintechBackendCache:";
 });
 
+// Email settings
+builder.Services.Configure<EmailSettings>(builder.Configuration.GetSection("EmailSettings"));
+
 
 // DB connection string 
 var databaseProvider = builder.Configuration.GetValue<string>("DatabaseProvider")?.Trim().ToLowerInvariant();
@@ -265,7 +270,7 @@ builder.Services.AddAuthorization();
 builder.Services.AddScoped<IJwtTokenGenerator, JwtTokenGenerator>();
 builder.Services.AddScoped<CacheService>();
 builder.Services.AddScoped<ITokenService, TokenService>();
-
+builder.Services.AddScoped<IEmailService, EmailService>();
 var app = builder.Build();
 
 app.UseMiddleware<ExceptionHandlingMiddleware>();
