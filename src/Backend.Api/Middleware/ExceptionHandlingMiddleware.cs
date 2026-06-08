@@ -17,25 +17,38 @@ public class ExceptionHandlingMiddleware
 
     public async Task InvokeAsync(HttpContext context)
     {
+        var requestId = context.TraceIdentifier;
+        context.Items["RequestId"] = requestId;
+
         try
         {
             await _next(context);
         }
         catch (Exception ex)
         {
-            await HandleExceptionAsync(context, ex);
+            await HandleExceptionAsync(context, ex, requestId);
         }
     }
 
-    private async Task HandleExceptionAsync(HttpContext context, Exception exception)
+    private async Task HandleExceptionAsync(
+        HttpContext context,
+        Exception exception,
+        string requestId)
     {
         if (context.Response.HasStarted)
         {
-            _logger.LogError(exception, "An unhandled exception occurred after the response had already started.");
-            throw exception;
+            _logger.LogError(exception,
+                "Response already started | RequestId: {RequestId}",
+                requestId);
+
+            return;
         }
 
-        _logger.LogError(exception, "An unhandled exception occurred while processing the request. RequestId={RequestId}", context.TraceIdentifier);
+        _logger.LogError(exception,
+            "Unhandled Exception | RequestId: {RequestId} | Path: {Path} | Method: {Method}",
+            requestId,
+            context.Request.Path,
+            context.Request.Method);
 
         context.Response.Clear();
         context.Response.StatusCode = (int)HttpStatusCode.InternalServerError;
@@ -44,10 +57,9 @@ public class ExceptionHandlingMiddleware
         var result = new BaseResult(
             statusCode: HttpStatusCode.InternalServerError,
             message: "An error occurred; please try again later"
-            
         );
 
-        context.Response.Headers["X-Request-Id"] = result.RequestId;
+        context.Response.Headers["X-Request-Id"] = requestId;
 
         await context.Response.WriteAsJsonAsync(result);
     }

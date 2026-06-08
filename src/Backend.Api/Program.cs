@@ -7,6 +7,7 @@ using Backend.Domain.Persistence;
 using Backend.Infrastructure.Filters;
 using HealthChecks.UI.Client;
 using MediatR;
+using Serilog;
 
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Diagnostics.HealthChecks;
@@ -26,8 +27,13 @@ using System.Net;
 using System.Security.Claims;
 using Infrastructure.Email.Models;
 using Backend.Infrastructure.Email;
+// using Hangfire;
+// using Hangfire.PostgreSql;
 
 var builder = WebApplication.CreateBuilder(args);
+
+builder.Host.UseSerilog();
+// builder.Services.AddHangfireServer();
 
 // Controllers
 builder.Services.AddControllers();
@@ -52,6 +58,17 @@ builder.Services.Configure<ApiBehaviorOptions>(options =>
         };
     };
 });
+
+// serilog
+Log.Logger = new LoggerConfiguration()
+    .MinimumLevel.Information()
+    .WriteTo.Console()
+    .WriteTo.File(
+        path: "Logs/log-.txt",
+        rollingInterval: RollingInterval.Day,
+        retainedFileCountLimit: 30,
+        shared: true)
+    .CreateLogger();
 
 // CORS
 var corsPolicyName = "CorsPolicy";
@@ -206,9 +223,26 @@ builder.Services.AddDbContext<AppDbContext>(options =>
     }
 });
 
+// Hangfire setup
+
+// builder.Services.AddHangfire(config =>
+// {
+//     config.SetDataCompatibilityLevel(CompatibilityLevel.Version_180)
+//           .UseSimpleAssemblyNameTypeSerializer()
+//           .UseRecommendedSerializerSettings()
+//           .UsePostgreSqlStorage(options =>
+//           {
+//               options.UseNpgsqlConnection(
+//                   builder.Configuration.GetConnectionString("Postgres"));
+
+//               options.InvisibilityTimeout = TimeSpan.FromMinutes(5);
+//               options.QueuePollInterval = TimeSpan.FromSeconds(15);
+//           });
+// });
+
 // Identity
 builder.Services.AddIdentity<User, IdentityRole<int>>(options =>
-{
+{  
     options.Password.RequireDigit = true;
     options.Password.RequiredLength = 8;
     options.Password.RequireNonAlphanumeric = false;

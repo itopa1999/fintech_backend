@@ -57,6 +57,20 @@ public class AuthController : ControllerBase
         return result.ToActionResult();
     }
 
+    [HttpPost("resend-token")]
+    [ProducesResponseType(typeof(BaseResult), (int)HttpStatusCode.OK)]
+    [ProducesResponseType(typeof(BaseResult), (int)HttpStatusCode.BadRequest)]
+    public async Task<ActionResult<BaseResult>> ResendToken([FromBody] ResendTokenDto dto, CancellationToken cancellationToken)
+    {
+        var command = new ResendTokenCommand.Command
+        {
+            Email = dto.Email.Trim()
+        };
+        var result = await _mediator.Send(command, cancellationToken);
+        return result.ToActionResult();
+    }
+
+
     [HttpPost("login")]
     [ProducesResponseType(typeof(BaseResult<AuthResponseDto>), (int)HttpStatusCode.OK)]
     [ProducesResponseType(typeof(BaseResult), (int)HttpStatusCode.BadRequest)]
@@ -108,6 +122,21 @@ public class AuthController : ControllerBase
         var command = new ForgotPasswordCommand.Command
         {
             Email = dto.Email.Trim()
+        };
+        var result = await _mediator.Send(command, cancellationToken);
+        return result.ToActionResult();
+    }
+
+    [HttpPost("confirm-forgot-password")]
+    [ProducesResponseType(typeof(BaseResult), (int)HttpStatusCode.OK)]
+    [ProducesResponseType(typeof(BaseResult), (int)HttpStatusCode.BadRequest)]
+    public async Task<ActionResult<BaseResult>> ConfirmForgotPassword([FromBody] ConfirmForgotPasswordDto dto, CancellationToken cancellationToken)
+    {
+        var command = new ConfirmForgotPasswordCommand.Command
+        {
+            Token = dto.Token.Trim(),
+            NewPassword = dto.NewPassword.Trim(),
+            ConfirmPassword = dto.ConfirmPassword.Trim()
         };
         var result = await _mediator.Send(command, cancellationToken);
         return result.ToActionResult();

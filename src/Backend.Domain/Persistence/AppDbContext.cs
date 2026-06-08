@@ -46,8 +46,6 @@ public class AppDbContext : IdentityDbContext<User, IdentityRole<int>, int>
         {
             token.ToTable("VerificationTokens");
             token.HasKey(x => x.Id);
-            token.HasIndex(x => x.UserId)
-                .IsUnique(true);
             token.Property(x => x.Token)
                 .IsRequired()
                 .HasMaxLength(6);

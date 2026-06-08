@@ -23,3 +23,9 @@ public enum UserRole
     Organizer,
     User
 }
+
+public enum VerificationTokenType
+{
+    EmailVerification,
+    PasswordReset
+}

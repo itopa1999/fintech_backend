@@ -35,6 +35,14 @@ public class VerifyTokenDto
     public string Token { get; set; }
 }
 
+public class ResendTokenDto
+{
+    [Required(ErrorMessage = "Email is required")]
+    [EmailAddress(ErrorMessage = "Invalid email address format")]
+    [MaxLength(256, ErrorMessage = "Email cannot exceed 256 characters")]
+    public string Email { get; set; }
+}
+
 public class RefreshRequestDto
 {
     [Required(ErrorMessage = "Refresh token is required")]
@@ -47,4 +55,20 @@ public class ForgotPasswordDto
     [EmailAddress(ErrorMessage = "Invalid email address format")]
     [MaxLength(256, ErrorMessage = "Email cannot exceed 256 characters")]
     public string Email { get; set; }
+}
+
+public class ConfirmForgotPasswordDto
+{
+    [Required(ErrorMessage = "Token is required")]
+    [MaxLength(6, ErrorMessage = "Token cannot exceed 6 characters")]
+    public string Token { get; set; } 
+
+    [Required(ErrorMessage = "New password is required")]
+    [MinLength(8, ErrorMessage = "Password must be at least 8 characters long.")]
+    [DataType(DataType.Password)]
+    public string NewPassword { get; set; }
+
+    [Required(ErrorMessage = "Confirm password is required")]
+    [Compare("NewPassword", ErrorMessage = "Passwords do not match.")]
+    public string ConfirmPassword { get; set; }
 }

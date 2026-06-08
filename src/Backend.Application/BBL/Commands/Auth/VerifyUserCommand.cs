@@ -38,7 +38,8 @@ public class VerifyUserCommand
             var record = await _context.VerificationTokens
                 .FirstOrDefaultAsync(x =>
                     x.UserId == request.UserId &&
-                    x.Token == request.Token,
+                    x.Token == request.Token &&
+                    x.TokenType == VerificationTokenType.EmailVerification,
                     cancellationToken);
 
             if (record == null)

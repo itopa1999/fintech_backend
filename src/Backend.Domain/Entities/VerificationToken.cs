@@ -9,6 +9,7 @@ public class VerificationToken : BaseEntity
     public int Id { get; set; }
     public int? UserId { get; set; }
     public string Token { get; set; }
+    public VerificationTokenType TokenType { get; set; }
     public DateTime ExpiresAt { get; set; }
     public DateTime? UsedAt { get; set; }
     public bool IsUsed { get; set; } = false;

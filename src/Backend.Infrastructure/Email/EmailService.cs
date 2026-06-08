@@ -20,63 +20,58 @@ public sealed class EmailService : IEmailService
         _logger = logger;
     }
 
-    public async Task SendVerificationOtpAsync(
+    public async Task SendForgetPasswordEmailAsync(string firstName, string toEmail, string token, CancellationToken cancellationToken = default)
+    {
+        await SendEmailAsync(
+            toEmail,
+            "ForgetPassword.html",
+            "Forget Password",
+            new Dictionary<string, string> { { "{{firstName}}", firstName }, { "{{token}}", token } },
+            cancellationToken);
+    }
+
+    public async Task SendVerificationOtpAsync(string firstName, string toEmail, string otp, CancellationToken cancellationToken = default)
+    {
+        await SendEmailAsync(
+            toEmail,
+            "VerificationOtp.html",
+            "Email Verification OTP",
+            new Dictionary<string, string> { { "{{firstName}}", firstName }, { "{{otp}}", otp } },
+            cancellationToken);
+    }
+
+    private async Task SendEmailAsync(
         string toEmail,
-        string otp,
-        CancellationToken cancellationToken = default)
+        string templateFileName,
+        string subject,
+        Dictionary<string, string> replacements,
+        CancellationToken cancellationToken)
     {
         var templatePath = Path.Combine(
             AppContext.BaseDirectory,
             "Email",
             "Templates",
-            "VerificationOtp.html");
+            templateFileName);
 
-        var htmlTemplate = await File.ReadAllTextAsync(
-            templatePath,
-            cancellationToken);
+        var htmlTemplate = await File.ReadAllTextAsync(templatePath, cancellationToken);
 
-        var htmlBody = htmlTemplate.Replace(
-            "{{otp}}",
-            otp);
+        var htmlBody = replacements.Aggregate(htmlTemplate, (current, replacement) => 
+            current.Replace(replacement.Key, replacement.Value));
 
+        // Build email message
         var email = new MimeMessage();
-
-        email.From.Add(new MailboxAddress(
-            _settings.FromName,
-            _settings.FromEmail));
-
+        email.From.Add(new MailboxAddress(_settings.FromName, _settings.FromEmail));
         email.To.Add(MailboxAddress.Parse(toEmail));
+        email.Subject = subject;
+        email.Body = new BodyBuilder { HtmlBody = htmlBody }.ToMessageBody();
 
-        email.Subject = "Email Verification OTP";
-
-        email.Body = new BodyBuilder
-        {
-            HtmlBody = htmlBody
-        }.ToMessageBody();
-
+        // Send via SMTP
         using var smtp = new SmtpClient();
+        await smtp.ConnectAsync(_settings.Host, _settings.Port, _settings.UseSSL, cancellationToken);
+        await smtp.AuthenticateAsync(_settings.Username, _settings.Password, cancellationToken);
+        await smtp.SendAsync(email, cancellationToken);
+        await smtp.DisconnectAsync(true, cancellationToken);
 
-        await smtp.ConnectAsync(
-            _settings.Host,
-            _settings.Port,
-            _settings.UseSSL,
-            cancellationToken);
-
-        await smtp.AuthenticateAsync(
-            _settings.Username,
-            _settings.Password,
-            cancellationToken);
-
-        await smtp.SendAsync(
-            email,
-            cancellationToken);
-
-        await smtp.DisconnectAsync(
-            true,
-            cancellationToken);
-
-        _logger.LogInformation(
-            "Verification OTP email sent to {Email}",
-            toEmail);
+        _logger.LogInformation("Email sent to {Email} with subject {Subject}", toEmail, subject);
     }
 }

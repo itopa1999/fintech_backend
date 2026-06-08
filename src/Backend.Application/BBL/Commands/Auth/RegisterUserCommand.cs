@@ -130,16 +130,13 @@ public class RegisterUserCommand
                 _logger.LogInformation("Role {Role} assigned to user {Email}", roleName, request.Email);
             }
 
-            var token = RandomNumberGenerator.GetInt32(100000, 1000000);
-
             _logger.LogInformation("Verification token generated for user {Email}", request.Email);
-
-            await _emailService.SendVerificationOtpAsync(user.Email, token.ToString());
 
             var verificationToken = new VerificationToken
             {
-                Token = token.ToString(),
+                Token = Generators.Generate(6).ToString(),
                 UserId = user.Id,
+                TokenType = VerificationTokenType.EmailVerification,
                 ExpiresAt = DateTime.UtcNow.AddMinutes(10),
                 IsUsed = false,
                 CreatedAt = DateTime.UtcNow
@@ -147,6 +144,9 @@ public class RegisterUserCommand
 
             _context.VerificationTokens.Add(verificationToken);
             await _context.SaveChangesAsync(cancellationToken);
+
+            await _emailService.SendVerificationOtpAsync(user.FirstName ?? string.Empty, user.Email, verificationToken.Token, cancellationToken);
+
 
             _logger.LogInformation("Verification token saved for user {Email}", request.Email);
 

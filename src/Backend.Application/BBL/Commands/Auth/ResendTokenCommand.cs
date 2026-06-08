@@ -6,13 +6,12 @@ using Backend.Domain.Common;
 using Backend.Domain.Entities;
 using Backend.Domain.Persistence;
 using MediatR;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 
 namespace Backend.Application.BBL.Commands.Auth;
 
-public class ForgotPasswordCommand
+public class ResendTokenCommand
 {
     public class Command : IRequest<BaseResult>
     {
@@ -21,18 +20,14 @@ public class ForgotPasswordCommand
 
     public class Handler : IRequestHandler<Command, BaseResult>
     {
-        private readonly UserManager<User> _userManager;
         private readonly IEmailService _emailService;
-        private readonly AppDbContext _context;        
-
-        public Handler(UserManager<User> userManager, 
-                IEmailService emailService, 
-                AppDbContext context
-        )
+        private readonly AppDbContext _context;
+        private readonly UserManager<User> _userManager;
+        public Handler(IEmailService emailService, AppDbContext context, UserManager<User> userManager)
         {
-            _userManager = userManager;
             _emailService = emailService;
             _context = context;
+            _userManager = userManager;
         }
 
         public async Task<BaseResult> Handle(Command request, CancellationToken cancellationToken)
@@ -40,15 +35,15 @@ public class ForgotPasswordCommand
             var user = await _userManager.Users
             .AsNoTracking()
             .FirstOrDefaultAsync(u => u.Email == request.Email, cancellationToken);
-
             if (user == null)
-            {
-                return new BaseResult(HttpStatusCode.OK, "If an account with that email exists, a password reset link has been sent.");
-            }
+                return new BaseResult(HttpStatusCode.NotFound, "User not found.");
+
+            if (user.EmailConfirmed)
+                return new BaseResult(HttpStatusCode.BadRequest, "Email already verified.");
 
             var verificationToken = await _context.VerificationTokens
-                .FirstOrDefaultAsync(t => t.UserId == user.Id && t.TokenType == VerificationTokenType.PasswordReset, cancellationToken)
-                ?? new VerificationToken { UserId = user.Id, TokenType = VerificationTokenType.PasswordReset };
+                .FirstOrDefaultAsync(t => t.UserId == user.Id && t.TokenType == VerificationTokenType.EmailVerification, cancellationToken)
+                ?? new VerificationToken { UserId = user.Id, TokenType = VerificationTokenType.EmailVerification };
 
             verificationToken.Token = Generators.Generate(6).ToString();
             verificationToken.ExpiresAt = DateTime.UtcNow.AddMinutes(10);
@@ -63,9 +58,9 @@ public class ForgotPasswordCommand
 
             await _context.SaveChangesAsync(cancellationToken);
 
-            await _emailService.SendForgetPasswordEmailAsync(user.FirstName ?? string.Empty, user.Email, verificationToken.Token.ToString(), cancellationToken);
+            await _emailService.SendVerificationOtpAsync(user.FirstName ?? string.Empty, user.Email, verificationToken.Token, cancellationToken);
 
-            return new BaseResult(HttpStatusCode.OK, "If an account with that email exists, a password reset link has been sent.");
+            return new BaseResult(HttpStatusCode.OK, $"A token has been resent to {request.Email} if an account with that email exists.");
         }
     }
 }
