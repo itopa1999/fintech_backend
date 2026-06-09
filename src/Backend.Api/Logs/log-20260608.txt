@@ -1634,3 +1634,439 @@ LIMIT 1
 2026-06-08 07:01:03.689 -07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5014/swagger/index.html - 200 null text/html;charset=utf-8 214.9462ms
 2026-06-08 07:01:04.022 -07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5014/swagger/v1/swagger.json - null null
 2026-06-08 07:01:04.391 -07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5014/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 367.4557ms
+2026-06-08 10:10:05.790 -07:00 [WRN] Entity 'User' has a global query filter defined and is the required end of a relationship with the entity 'RefreshToken'. This may lead to unexpected results when the required entity is filtered out. Either configure the navigation as optional, or define matching query filters for both entities in the navigation. See https://go.microsoft.com/fwlink/?linkid=2131316 for more information.
+2026-06-08 10:10:10.766 -07:00 [INF] Executed DbCommand (270ms) [Parameters=[@__normalizedName_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Id", a."ConcurrencyStamp", a."Name", a."NormalizedName"
+FROM "AspNetRoles" AS a
+WHERE a."NormalizedName" = @__normalizedName_0
+LIMIT 1
+2026-06-08 10:10:10.876 -07:00 [INF] Executed DbCommand (1ms) [Parameters=[@__normalizedName_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Id", a."ConcurrencyStamp", a."Name", a."NormalizedName"
+FROM "AspNetRoles" AS a
+WHERE a."NormalizedName" = @__normalizedName_0
+LIMIT 1
+2026-06-08 10:10:10.881 -07:00 [INF] Executed DbCommand (1ms) [Parameters=[@__normalizedName_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Id", a."ConcurrencyStamp", a."Name", a."NormalizedName"
+FROM "AspNetRoles" AS a
+WHERE a."NormalizedName" = @__normalizedName_0
+LIMIT 1
+2026-06-08 10:10:11.064 -07:00 [INF] User profile is available. Using 'C:\Users\User\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-06-08 10:10:11.152 -07:00 [INF] Now listening on: http://localhost:5014
+2026-06-08 10:10:11.156 -07:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-06-08 10:10:11.159 -07:00 [INF] Hosting environment: Development
+2026-06-08 10:10:11.161 -07:00 [INF] Content root path: C:\Users\User\Desktop\lucky\fintech\src\Backend.Api
+2026-06-08 10:10:12.787 -07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5014/swagger/index.html - null null
+2026-06-08 10:10:12.965 -07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5014/swagger/index.html - 200 null text/html;charset=utf-8 181.7708ms
+2026-06-08 10:10:13.219 -07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5014/swagger/swagger-ui-bundle.js - null null
+2026-06-08 10:10:13.219 -07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5014/swagger/swagger-ui-standalone-preset.js - null null
+2026-06-08 10:10:13.219 -07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5014/swagger/swagger-ui.css - null null
+2026-06-08 10:10:13.558 -07:00 [INF] Sending file. Request path: '/swagger-ui.css'. Physical path: 'N/A'
+2026-06-08 10:10:13.558 -07:00 [INF] Sending file. Request path: '/swagger-ui-standalone-preset.js'. Physical path: 'N/A'
+2026-06-08 10:10:13.558 -07:00 [INF] Sending file. Request path: '/swagger-ui-bundle.js'. Physical path: 'N/A'
+2026-06-08 10:10:13.561 -07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5014/swagger/swagger-ui.css - 499 143943 text/css 342.0587ms
+2026-06-08 10:10:13.562 -07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5014/swagger/swagger-ui-standalone-preset.js - 499 339486 text/javascript 343.9139ms
+2026-06-08 10:10:13.564 -07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5014/swagger/swagger-ui-bundle.js - 499 1096145 text/javascript 345.8483ms
+2026-06-08 10:10:14.753 -07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5014/swagger/index.html - null null
+2026-06-08 10:10:14.770 -07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5014/swagger/index.html - 200 null text/html;charset=utf-8 16.8342ms
+2026-06-08 10:10:14.806 -07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5014/swagger/swagger-ui-bundle.js - null null
+2026-06-08 10:10:14.808 -07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5014/swagger/swagger-ui-standalone-preset.js - null null
+2026-06-08 10:10:14.813 -07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5014/swagger/swagger-ui.css - null null
+2026-06-08 10:10:15.244 -07:00 [INF] Sending file. Request path: '/swagger-ui.css'. Physical path: 'N/A'
+2026-06-08 10:10:15.400 -07:00 [INF] Sending file. Request path: '/swagger-ui-standalone-preset.js'. Physical path: 'N/A'
+2026-06-08 10:10:15.455 -07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5014/swagger/swagger-ui-standalone-preset.js - 200 339486 text/javascript 647.1563ms
+2026-06-08 10:10:15.455 -07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5014/swagger/swagger-ui.css - 200 143943 text/css 642.3212ms
+2026-06-08 10:10:15.780 -07:00 [INF] Sending file. Request path: '/swagger-ui-bundle.js'. Physical path: 'N/A'
+2026-06-08 10:10:15.825 -07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5014/swagger/swagger-ui-bundle.js - 200 1096145 text/javascript 1018.6794ms
+2026-06-08 10:10:16.143 -07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5014/swagger/v1/swagger.json - null null
+2026-06-08 10:10:16.196 -07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5014/swagger/favicon-32x32.png - null null
+2026-06-08 10:10:16.222 -07:00 [INF] Sending file. Request path: '/favicon-32x32.png'. Physical path: 'N/A'
+2026-06-08 10:10:16.230 -07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5014/swagger/favicon-32x32.png - 200 628 image/png 33.8575ms
+2026-06-08 10:10:16.506 -07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5014/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 362.9395ms
+2026-06-08 10:10:33.460 -07:00 [INF] Request starting HTTP/1.1 POST http://localhost:5014/api/v1/auth/login - application/json 60
+2026-06-08 10:10:33.471 -07:00 [WRN] Failed to determine the https port for redirect.
+2026-06-08 10:10:33.588 -07:00 [INF] CORS policy execution successful.
+2026-06-08 10:10:33.745 -07:00 [INF] Executing endpoint 'Backend.Api.Controllers.AuthController.LoginUser (Backend.Api)'
+2026-06-08 10:10:33.853 -07:00 [INF] Route matched with {action = "LoginUser", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[Backend.Application.Common.Results.BaseResult]] LoginUser(Backend.Application.DTOs.Auth.LoginUserDto, System.Threading.CancellationToken) on controller Backend.Api.Controllers.AuthController (Backend.Api).
+2026-06-08 10:10:34.003 -07:00 [INF] Login attempt started for email: user1@example.com
+2026-06-08 10:10:34.206 -07:00 [INF] Executed DbCommand (72ms) [Parameters=[@__normalizedEmail_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT u."Id", u."AccessFailedCount", u."ConcurrencyStamp", u."CreatedAt", u."DateOfBirth", u."DeletedAt", u."Email", u."EmailConfirmed", u."FirstName", u."Gender", u."IsDeleted", u."KycTier", u."LastLoginAt", u."LastName", u."LockoutEnabled", u."LockoutEnd", u."MiddleName", u."ModifiedAt", u."NormalizedEmail", u."NormalizedUserName", u."PasswordChangedAt", u."PasswordHash", u."PhoneNumber", u."PhoneNumberConfirmed", u."ProfileImageUrl", u."SecurityStamp", u."Status", u."TwoFactorEnabled", u."UserName"
+FROM "Users" AS u
+WHERE NOT (u."IsDeleted") AND u."NormalizedEmail" = @__normalizedEmail_0
+LIMIT 2
+2026-06-08 10:10:34.743 -07:00 [WRN] Login blocked - email not confirmed: user1@example.com
+2026-06-08 10:10:34.755 -07:00 [INF] Executing ObjectResult, writing value of type 'Backend.Application.Common.Results.BaseResult`1[[Backend.Application.DTOs.Auth.AuthResponseDto, Backend.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-06-08 10:10:34.815 -07:00 [INF] Executed action Backend.Api.Controllers.AuthController.LoginUser (Backend.Api) in 954.4544ms
+2026-06-08 10:10:34.817 -07:00 [INF] Executed endpoint 'Backend.Api.Controllers.AuthController.LoginUser (Backend.Api)'
+2026-06-08 10:10:34.824 -07:00 [INF] Request finished HTTP/1.1 POST http://localhost:5014/api/v1/auth/login - 400 null application/json; charset=utf-8 1363.5805ms
+2026-06-08 10:10:41.666 -07:00 [INF] Request starting HTTP/1.1 POST http://localhost:5014/api/v1/auth/login - application/json 60
+2026-06-08 10:10:41.710 -07:00 [INF] CORS policy execution successful.
+2026-06-08 10:10:41.715 -07:00 [INF] Executing endpoint 'Backend.Api.Controllers.AuthController.LoginUser (Backend.Api)'
+2026-06-08 10:10:41.718 -07:00 [INF] Route matched with {action = "LoginUser", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[Backend.Application.Common.Results.BaseResult]] LoginUser(Backend.Application.DTOs.Auth.LoginUserDto, System.Threading.CancellationToken) on controller Backend.Api.Controllers.AuthController (Backend.Api).
+2026-06-08 10:10:41.732 -07:00 [INF] Login attempt started for email: user2@example.com
+2026-06-08 10:10:41.758 -07:00 [INF] Executed DbCommand (3ms) [Parameters=[@__normalizedEmail_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT u."Id", u."AccessFailedCount", u."ConcurrencyStamp", u."CreatedAt", u."DateOfBirth", u."DeletedAt", u."Email", u."EmailConfirmed", u."FirstName", u."Gender", u."IsDeleted", u."KycTier", u."LastLoginAt", u."LastName", u."LockoutEnabled", u."LockoutEnd", u."MiddleName", u."ModifiedAt", u."NormalizedEmail", u."NormalizedUserName", u."PasswordChangedAt", u."PasswordHash", u."PhoneNumber", u."PhoneNumberConfirmed", u."ProfileImageUrl", u."SecurityStamp", u."Status", u."TwoFactorEnabled", u."UserName"
+FROM "Users" AS u
+WHERE NOT (u."IsDeleted") AND u."NormalizedEmail" = @__normalizedEmail_0
+LIMIT 2
+2026-06-08 10:10:41.906 -07:00 [INF] Executed DbCommand (1ms) [Parameters=[@__normalizedUserName_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT u."Id", u."AccessFailedCount", u."ConcurrencyStamp", u."CreatedAt", u."DateOfBirth", u."DeletedAt", u."Email", u."EmailConfirmed", u."FirstName", u."Gender", u."IsDeleted", u."KycTier", u."LastLoginAt", u."LastName", u."LockoutEnabled", u."LockoutEnd", u."MiddleName", u."ModifiedAt", u."NormalizedEmail", u."NormalizedUserName", u."PasswordChangedAt", u."PasswordHash", u."PhoneNumber", u."PhoneNumberConfirmed", u."ProfileImageUrl", u."SecurityStamp", u."Status", u."TwoFactorEnabled", u."UserName"
+FROM "Users" AS u
+WHERE NOT (u."IsDeleted") AND u."NormalizedUserName" = @__normalizedUserName_0
+LIMIT 1
+2026-06-08 10:10:41.920 -07:00 [INF] Executed DbCommand (1ms) [Parameters=[@__normalizedEmail_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT u."Id", u."AccessFailedCount", u."ConcurrencyStamp", u."CreatedAt", u."DateOfBirth", u."DeletedAt", u."Email", u."EmailConfirmed", u."FirstName", u."Gender", u."IsDeleted", u."KycTier", u."LastLoginAt", u."LastName", u."LockoutEnabled", u."LockoutEnd", u."MiddleName", u."ModifiedAt", u."NormalizedEmail", u."NormalizedUserName", u."PasswordChangedAt", u."PasswordHash", u."PhoneNumber", u."PhoneNumberConfirmed", u."ProfileImageUrl", u."SecurityStamp", u."Status", u."TwoFactorEnabled", u."UserName"
+FROM "Users" AS u
+WHERE NOT (u."IsDeleted") AND u."NormalizedEmail" = @__normalizedEmail_0
+LIMIT 2
+2026-06-08 10:10:42.256 -07:00 [INF] Executed DbCommand (115ms) [Parameters=[@p28='?' (DbType = Int32), @p0='?' (DbType = Int32), @p1='?', @p29='?', @p2='?' (DbType = DateTime), @p3='?' (DbType = Date), @p4='?' (DbType = DateTime), @p5='?', @p6='?' (DbType = Boolean), @p7='?', @p8='?', @p9='?' (DbType = Boolean), @p10='?' (DbType = Int32), @p11='?' (DbType = DateTime), @p12='?', @p13='?' (DbType = Boolean), @p14='?' (DbType = DateTime), @p15='?', @p16='?' (DbType = DateTime), @p17='?', @p18='?', @p19='?' (DbType = DateTime), @p20='?', @p21='?', @p22='?' (DbType = Boolean), @p23='?', @p24='?', @p25='?', @p26='?' (DbType = Boolean), @p27='?'], CommandType='"Text"', CommandTimeout='30']
+UPDATE "Users" SET "AccessFailedCount" = @p0, "ConcurrencyStamp" = @p1, "CreatedAt" = @p2, "DateOfBirth" = @p3, "DeletedAt" = @p4, "Email" = @p5, "EmailConfirmed" = @p6, "FirstName" = @p7, "Gender" = @p8, "IsDeleted" = @p9, "KycTier" = @p10, "LastLoginAt" = @p11, "LastName" = @p12, "LockoutEnabled" = @p13, "LockoutEnd" = @p14, "MiddleName" = @p15, "ModifiedAt" = @p16, "NormalizedEmail" = @p17, "NormalizedUserName" = @p18, "PasswordChangedAt" = @p19, "PasswordHash" = @p20, "PhoneNumber" = @p21, "PhoneNumberConfirmed" = @p22, "ProfileImageUrl" = @p23, "SecurityStamp" = @p24, "Status" = @p25, "TwoFactorEnabled" = @p26, "UserName" = @p27
+WHERE "Id" = @p28 AND "ConcurrencyStamp" = @p29;
+2026-06-08 10:10:42.497 -07:00 [INF] Executed DbCommand (82ms) [Parameters=[@__userId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT a0."Name"
+FROM "AspNetUserRoles" AS a
+INNER JOIN "AspNetRoles" AS a0 ON a."RoleId" = a0."Id"
+WHERE a."UserId" = @__userId_0
+2026-06-08 10:10:42.581 -07:00 [INF] Executed DbCommand (1ms) [Parameters=[@__userId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT a0."Name"
+FROM "AspNetUserRoles" AS a
+INNER JOIN "AspNetRoles" AS a0 ON a."RoleId" = a0."Id"
+WHERE a."UserId" = @__userId_0
+2026-06-08 10:10:42.883 -07:00 [INF] Executed DbCommand (166ms) [Parameters=[@p0='?' (DbType = DateTime), @p1='?', @p2='?' (DbType = DateTime), @p3='?', @p4='?' (DbType = DateTime), @p5='?' (DbType = Boolean), @p6='?' (DbType = DateTime), @p7='?', @p8='?' (DbType = DateTime), @p9='?', @p10='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "RefreshTokens" ("CreatedAt", "CreatedBy", "DeletedAt", "DeletedBy", "ExpiresAt", "IsDeleted", "ModifiedAt", "ModifiedBy", "RevokedAt", "Token", "UserId")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10)
+RETURNING "Id";
+2026-06-08 10:10:42.950 -07:00 [INF] Login successful for user: user2@example.com
+2026-06-08 10:10:42.952 -07:00 [INF] Executing ObjectResult, writing value of type 'Backend.Application.Common.Results.BaseResult`1[[Backend.Application.DTOs.Auth.AuthResponseDto, Backend.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-06-08 10:10:42.989 -07:00 [INF] Executed action Backend.Api.Controllers.AuthController.LoginUser (Backend.Api) in 1268.8225ms
+2026-06-08 10:10:42.993 -07:00 [INF] Executed endpoint 'Backend.Api.Controllers.AuthController.LoginUser (Backend.Api)'
+2026-06-08 10:10:42.995 -07:00 [INF] Request finished HTTP/1.1 POST http://localhost:5014/api/v1/auth/login - 200 null application/json; charset=utf-8 1329.1462ms
+2026-06-08 10:10:55.978 -07:00 [INF] Request starting HTTP/1.1 POST http://localhost:5014/api/v1/auth/resend-token - application/json 34
+2026-06-08 10:10:55.986 -07:00 [INF] CORS policy execution successful.
+2026-06-08 10:10:55.990 -07:00 [INF] Executing endpoint 'Backend.Api.Controllers.AuthController.ResendToken (Backend.Api)'
+2026-06-08 10:10:56.022 -07:00 [INF] Route matched with {action = "ResendToken", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[Backend.Application.Common.Results.BaseResult]] ResendToken(Backend.Application.DTOs.Auth.ResendTokenDto, System.Threading.CancellationToken) on controller Backend.Api.Controllers.AuthController (Backend.Api).
+2026-06-08 10:10:56.072 -07:00 [INF] Executed DbCommand (1ms) [Parameters=[@__request_Email_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT u."Id", u."AccessFailedCount", u."ConcurrencyStamp", u."CreatedAt", u."DateOfBirth", u."DeletedAt", u."Email", u."EmailConfirmed", u."FirstName", u."Gender", u."IsDeleted", u."KycTier", u."LastLoginAt", u."LastName", u."LockoutEnabled", u."LockoutEnd", u."MiddleName", u."ModifiedAt", u."NormalizedEmail", u."NormalizedUserName", u."PasswordChangedAt", u."PasswordHash", u."PhoneNumber", u."PhoneNumberConfirmed", u."ProfileImageUrl", u."SecurityStamp", u."Status", u."TwoFactorEnabled", u."UserName"
+FROM "Users" AS u
+WHERE NOT (u."IsDeleted") AND u."Email" = @__request_Email_0
+LIMIT 1
+2026-06-08 10:10:56.079 -07:00 [INF] Executing ObjectResult, writing value of type 'Backend.Application.Common.Results.BaseResult'.
+2026-06-08 10:10:56.083 -07:00 [INF] Executed action Backend.Api.Controllers.AuthController.ResendToken (Backend.Api) in 49.8564ms
+2026-06-08 10:10:56.086 -07:00 [INF] Executed endpoint 'Backend.Api.Controllers.AuthController.ResendToken (Backend.Api)'
+2026-06-08 10:10:56.088 -07:00 [INF] Request finished HTTP/1.1 POST http://localhost:5014/api/v1/auth/resend-token - 400 null application/json; charset=utf-8 110.3085ms
+2026-06-08 10:11:42.163 -07:00 [INF] Request starting HTTP/1.1 POST http://localhost:5014/api/v1/auth/forgot-password - application/json 34
+2026-06-08 10:11:42.211 -07:00 [INF] CORS policy execution successful.
+2026-06-08 10:11:42.221 -07:00 [INF] Executing endpoint 'Backend.Api.Controllers.AuthController.ForgotPassword (Backend.Api)'
+2026-06-08 10:11:42.234 -07:00 [INF] Route matched with {action = "ForgotPassword", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[Backend.Application.Common.Results.BaseResult]] ForgotPassword(Backend.Application.DTOs.Auth.ForgotPasswordDto, System.Threading.CancellationToken) on controller Backend.Api.Controllers.AuthController (Backend.Api).
+2026-06-08 10:11:42.255 -07:00 [INF] Executed DbCommand (1ms) [Parameters=[@__request_Email_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT u."Id", u."AccessFailedCount", u."ConcurrencyStamp", u."CreatedAt", u."DateOfBirth", u."DeletedAt", u."Email", u."EmailConfirmed", u."FirstName", u."Gender", u."IsDeleted", u."KycTier", u."LastLoginAt", u."LastName", u."LockoutEnabled", u."LockoutEnd", u."MiddleName", u."ModifiedAt", u."NormalizedEmail", u."NormalizedUserName", u."PasswordChangedAt", u."PasswordHash", u."PhoneNumber", u."PhoneNumberConfirmed", u."ProfileImageUrl", u."SecurityStamp", u."Status", u."TwoFactorEnabled", u."UserName"
+FROM "Users" AS u
+WHERE NOT (u."IsDeleted") AND u."Email" = @__request_Email_0
+LIMIT 1
+2026-06-08 10:11:42.392 -07:00 [INF] Executed DbCommand (116ms) [Parameters=[@__user_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT v."Id", v."CreatedAt", v."CreatedBy", v."DeletedAt", v."DeletedBy", v."ExpiresAt", v."IsDeleted", v."IsUsed", v."ModifiedAt", v."ModifiedBy", v."Token", v."TokenType", v."UsedAt", v."UserId"
+FROM "VerificationTokens" AS v
+WHERE v."UserId" = @__user_Id_0 AND v."TokenType" = 1
+LIMIT 1
+2026-06-08 10:11:42.476 -07:00 [INF] Executed DbCommand (24ms) [Parameters=[@p0='?' (DbType = DateTime), @p1='?', @p2='?' (DbType = DateTime), @p3='?', @p4='?' (DbType = DateTime), @p5='?' (DbType = Boolean), @p6='?' (DbType = Boolean), @p7='?' (DbType = DateTime), @p8='?', @p9='?', @p10='?' (DbType = Int32), @p11='?' (DbType = DateTime), @p12='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "VerificationTokens" ("CreatedAt", "CreatedBy", "DeletedAt", "DeletedBy", "ExpiresAt", "IsDeleted", "IsUsed", "ModifiedAt", "ModifiedBy", "Token", "TokenType", "UsedAt", "UserId")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12)
+RETURNING "Id";
+2026-06-08 10:11:46.234 -07:00 [INF] Email sent to user2@example.com with subject Forget Password
+2026-06-08 10:11:46.247 -07:00 [INF] Executing ObjectResult, writing value of type 'Backend.Application.Common.Results.BaseResult'.
+2026-06-08 10:11:46.254 -07:00 [INF] Executed action Backend.Api.Controllers.AuthController.ForgotPassword (Backend.Api) in 4016.9164ms
+2026-06-08 10:11:46.266 -07:00 [INF] Executed endpoint 'Backend.Api.Controllers.AuthController.ForgotPassword (Backend.Api)'
+2026-06-08 10:11:46.280 -07:00 [INF] Request finished HTTP/1.1 POST http://localhost:5014/api/v1/auth/forgot-password - 200 null application/json; charset=utf-8 4117.0567ms
+2026-06-08 10:12:23.672 -07:00 [INF] Request starting HTTP/1.1 POST http://localhost:5014/api/v1/auth/confirm-forgot-password - application/json 87
+2026-06-08 10:12:23.679 -07:00 [INF] CORS policy execution successful.
+2026-06-08 10:12:23.681 -07:00 [INF] Executing endpoint 'Backend.Api.Controllers.AuthController.ConfirmForgotPassword (Backend.Api)'
+2026-06-08 10:12:23.714 -07:00 [INF] Route matched with {action = "ConfirmForgotPassword", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[Backend.Application.Common.Results.BaseResult]] ConfirmForgotPassword(Backend.Application.DTOs.Auth.ConfirmForgotPasswordDto, System.Threading.CancellationToken) on controller Backend.Api.Controllers.AuthController (Backend.Api).
+2026-06-08 10:12:23.751 -07:00 [INF] Executed DbCommand (1ms) [Parameters=[@__request_Token_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT v."Id", v."CreatedAt", v."CreatedBy", v."DeletedAt", v."DeletedBy", v."ExpiresAt", v."IsDeleted", v."IsUsed", v."ModifiedAt", v."ModifiedBy", v."Token", v."TokenType", v."UsedAt", v."UserId"
+FROM "VerificationTokens" AS v
+WHERE v."Token" = @__request_Token_0 AND v."TokenType" = 1
+LIMIT 1
+2026-06-08 10:12:23.753 -07:00 [INF] Executing ObjectResult, writing value of type 'Backend.Application.Common.Results.BaseResult'.
+2026-06-08 10:12:23.761 -07:00 [INF] Executed action Backend.Api.Controllers.AuthController.ConfirmForgotPassword (Backend.Api) in 32.5745ms
+2026-06-08 10:12:23.765 -07:00 [INF] Executed endpoint 'Backend.Api.Controllers.AuthController.ConfirmForgotPassword (Backend.Api)'
+2026-06-08 10:12:23.767 -07:00 [INF] Request finished HTTP/1.1 POST http://localhost:5014/api/v1/auth/confirm-forgot-password - 400 null application/json; charset=utf-8 95.6277ms
+2026-06-08 10:12:30.660 -07:00 [INF] Request starting HTTP/1.1 POST http://localhost:5014/api/v1/auth/confirm-forgot-password - application/json 86
+2026-06-08 10:12:30.672 -07:00 [INF] CORS policy execution successful.
+2026-06-08 10:12:30.679 -07:00 [INF] Executing endpoint 'Backend.Api.Controllers.AuthController.ConfirmForgotPassword (Backend.Api)'
+2026-06-08 10:12:30.689 -07:00 [INF] Route matched with {action = "ConfirmForgotPassword", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[Backend.Application.Common.Results.BaseResult]] ConfirmForgotPassword(Backend.Application.DTOs.Auth.ConfirmForgotPasswordDto, System.Threading.CancellationToken) on controller Backend.Api.Controllers.AuthController (Backend.Api).
+2026-06-08 10:12:30.718 -07:00 [INF] Executed DbCommand (2ms) [Parameters=[@__request_Token_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT v."Id", v."CreatedAt", v."CreatedBy", v."DeletedAt", v."DeletedBy", v."ExpiresAt", v."IsDeleted", v."IsUsed", v."ModifiedAt", v."ModifiedBy", v."Token", v."TokenType", v."UsedAt", v."UserId"
+FROM "VerificationTokens" AS v
+WHERE v."Token" = @__request_Token_0 AND v."TokenType" = 1
+LIMIT 1
+2026-06-08 10:12:30.725 -07:00 [INF] Executing ObjectResult, writing value of type 'Backend.Application.Common.Results.BaseResult'.
+2026-06-08 10:12:30.727 -07:00 [INF] Executed action Backend.Api.Controllers.AuthController.ConfirmForgotPassword (Backend.Api) in 19.1833ms
+2026-06-08 10:12:30.737 -07:00 [INF] Executed endpoint 'Backend.Api.Controllers.AuthController.ConfirmForgotPassword (Backend.Api)'
+2026-06-08 10:12:30.740 -07:00 [INF] Request finished HTTP/1.1 POST http://localhost:5014/api/v1/auth/confirm-forgot-password - 400 null application/json; charset=utf-8 79.4592ms
+2026-06-08 10:12:34.058 -07:00 [INF] Request starting HTTP/1.1 POST http://localhost:5014/api/v1/auth/confirm-forgot-password - application/json 86
+2026-06-08 10:12:34.087 -07:00 [INF] CORS policy execution successful.
+2026-06-08 10:12:34.088 -07:00 [INF] Executing endpoint 'Backend.Api.Controllers.AuthController.ConfirmForgotPassword (Backend.Api)'
+2026-06-08 10:12:34.090 -07:00 [INF] Route matched with {action = "ConfirmForgotPassword", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[Backend.Application.Common.Results.BaseResult]] ConfirmForgotPassword(Backend.Application.DTOs.Auth.ConfirmForgotPasswordDto, System.Threading.CancellationToken) on controller Backend.Api.Controllers.AuthController (Backend.Api).
+2026-06-08 10:12:34.121 -07:00 [INF] Executed DbCommand (2ms) [Parameters=[@__request_Token_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT v."Id", v."CreatedAt", v."CreatedBy", v."DeletedAt", v."DeletedBy", v."ExpiresAt", v."IsDeleted", v."IsUsed", v."ModifiedAt", v."ModifiedBy", v."Token", v."TokenType", v."UsedAt", v."UserId"
+FROM "VerificationTokens" AS v
+WHERE v."Token" = @__request_Token_0 AND v."TokenType" = 1
+LIMIT 1
+2026-06-08 10:12:34.124 -07:00 [INF] Executing ObjectResult, writing value of type 'Backend.Application.Common.Results.BaseResult'.
+2026-06-08 10:12:34.127 -07:00 [INF] Executed action Backend.Api.Controllers.AuthController.ConfirmForgotPassword (Backend.Api) in 25.9232ms
+2026-06-08 10:12:34.133 -07:00 [INF] Executed endpoint 'Backend.Api.Controllers.AuthController.ConfirmForgotPassword (Backend.Api)'
+2026-06-08 10:12:34.135 -07:00 [INF] Request finished HTTP/1.1 POST http://localhost:5014/api/v1/auth/confirm-forgot-password - 400 null application/json; charset=utf-8 76.3207ms
+2026-06-08 10:12:45.492 -07:00 [INF] Request starting HTTP/1.1 POST http://localhost:5014/api/v1/auth/confirm-forgot-password - application/json 86
+2026-06-08 10:12:45.503 -07:00 [INF] CORS policy execution successful.
+2026-06-08 10:12:45.506 -07:00 [INF] Executing endpoint 'Backend.Api.Controllers.AuthController.ConfirmForgotPassword (Backend.Api)'
+2026-06-08 10:12:45.511 -07:00 [INF] Route matched with {action = "ConfirmForgotPassword", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[Backend.Application.Common.Results.BaseResult]] ConfirmForgotPassword(Backend.Application.DTOs.Auth.ConfirmForgotPasswordDto, System.Threading.CancellationToken) on controller Backend.Api.Controllers.AuthController (Backend.Api).
+2026-06-08 10:12:45.517 -07:00 [INF] Executing ObjectResult, writing value of type 'Backend.Application.Common.Results.BaseResult'.
+2026-06-08 10:12:45.535 -07:00 [INF] Executed action Backend.Api.Controllers.AuthController.ConfirmForgotPassword (Backend.Api) in 21.9889ms
+2026-06-08 10:12:45.541 -07:00 [INF] Executed endpoint 'Backend.Api.Controllers.AuthController.ConfirmForgotPassword (Backend.Api)'
+2026-06-08 10:12:45.555 -07:00 [INF] Request finished HTTP/1.1 POST http://localhost:5014/api/v1/auth/confirm-forgot-password - 400 null application/json; charset=utf-8 62.5283ms
+2026-06-08 10:12:53.374 -07:00 [INF] Request starting HTTP/1.1 POST http://localhost:5014/api/v1/auth/confirm-forgot-password - application/json 87
+2026-06-08 10:12:53.384 -07:00 [INF] CORS policy execution successful.
+2026-06-08 10:12:53.386 -07:00 [INF] Executing endpoint 'Backend.Api.Controllers.AuthController.ConfirmForgotPassword (Backend.Api)'
+2026-06-08 10:12:53.388 -07:00 [INF] Route matched with {action = "ConfirmForgotPassword", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[Backend.Application.Common.Results.BaseResult]] ConfirmForgotPassword(Backend.Application.DTOs.Auth.ConfirmForgotPasswordDto, System.Threading.CancellationToken) on controller Backend.Api.Controllers.AuthController (Backend.Api).
+2026-06-08 10:12:53.402 -07:00 [INF] Executed DbCommand (1ms) [Parameters=[@__request_Token_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT v."Id", v."CreatedAt", v."CreatedBy", v."DeletedAt", v."DeletedBy", v."ExpiresAt", v."IsDeleted", v."IsUsed", v."ModifiedAt", v."ModifiedBy", v."Token", v."TokenType", v."UsedAt", v."UserId"
+FROM "VerificationTokens" AS v
+WHERE v."Token" = @__request_Token_0 AND v."TokenType" = 1
+LIMIT 1
+2026-06-08 10:12:53.518 -07:00 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT u."Id", u."AccessFailedCount", u."ConcurrencyStamp", u."CreatedAt", u."DateOfBirth", u."DeletedAt", u."Email", u."EmailConfirmed", u."FirstName", u."Gender", u."IsDeleted", u."KycTier", u."LastLoginAt", u."LastName", u."LockoutEnabled", u."LockoutEnd", u."MiddleName", u."ModifiedAt", u."NormalizedEmail", u."NormalizedUserName", u."PasswordChangedAt", u."PasswordHash", u."PhoneNumber", u."PhoneNumberConfirmed", u."ProfileImageUrl", u."SecurityStamp", u."Status", u."TwoFactorEnabled", u."UserName"
+FROM "Users" AS u
+WHERE NOT (u."IsDeleted") AND u."Id" = @__p_0
+LIMIT 1
+2026-06-08 10:12:53.637 -07:00 [INF] Executed DbCommand (1ms) [Parameters=[@__normalizedUserName_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT u."Id", u."AccessFailedCount", u."ConcurrencyStamp", u."CreatedAt", u."DateOfBirth", u."DeletedAt", u."Email", u."EmailConfirmed", u."FirstName", u."Gender", u."IsDeleted", u."KycTier", u."LastLoginAt", u."LastName", u."LockoutEnabled", u."LockoutEnd", u."MiddleName", u."ModifiedAt", u."NormalizedEmail", u."NormalizedUserName", u."PasswordChangedAt", u."PasswordHash", u."PhoneNumber", u."PhoneNumberConfirmed", u."ProfileImageUrl", u."SecurityStamp", u."Status", u."TwoFactorEnabled", u."UserName"
+FROM "Users" AS u
+WHERE NOT (u."IsDeleted") AND u."NormalizedUserName" = @__normalizedUserName_0
+LIMIT 1
+2026-06-08 10:12:53.642 -07:00 [INF] Executed DbCommand (1ms) [Parameters=[@__normalizedEmail_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT u."Id", u."AccessFailedCount", u."ConcurrencyStamp", u."CreatedAt", u."DateOfBirth", u."DeletedAt", u."Email", u."EmailConfirmed", u."FirstName", u."Gender", u."IsDeleted", u."KycTier", u."LastLoginAt", u."LastName", u."LockoutEnabled", u."LockoutEnd", u."MiddleName", u."ModifiedAt", u."NormalizedEmail", u."NormalizedUserName", u."PasswordChangedAt", u."PasswordHash", u."PhoneNumber", u."PhoneNumberConfirmed", u."ProfileImageUrl", u."SecurityStamp", u."Status", u."TwoFactorEnabled", u."UserName"
+FROM "Users" AS u
+WHERE NOT (u."IsDeleted") AND u."NormalizedEmail" = @__normalizedEmail_0
+LIMIT 2
+2026-06-08 10:12:53.655 -07:00 [INF] Executed DbCommand (1ms) [Parameters=[@p28='?' (DbType = Int32), @p0='?' (DbType = Int32), @p1='?', @p29='?', @p2='?' (DbType = DateTime), @p3='?' (DbType = Date), @p4='?' (DbType = DateTime), @p5='?', @p6='?' (DbType = Boolean), @p7='?', @p8='?', @p9='?' (DbType = Boolean), @p10='?' (DbType = Int32), @p11='?' (DbType = DateTime), @p12='?', @p13='?' (DbType = Boolean), @p14='?' (DbType = DateTime), @p15='?', @p16='?' (DbType = DateTime), @p17='?', @p18='?', @p19='?' (DbType = DateTime), @p20='?', @p21='?', @p22='?' (DbType = Boolean), @p23='?', @p24='?', @p25='?', @p26='?' (DbType = Boolean), @p27='?'], CommandType='"Text"', CommandTimeout='30']
+UPDATE "Users" SET "AccessFailedCount" = @p0, "ConcurrencyStamp" = @p1, "CreatedAt" = @p2, "DateOfBirth" = @p3, "DeletedAt" = @p4, "Email" = @p5, "EmailConfirmed" = @p6, "FirstName" = @p7, "Gender" = @p8, "IsDeleted" = @p9, "KycTier" = @p10, "LastLoginAt" = @p11, "LastName" = @p12, "LockoutEnabled" = @p13, "LockoutEnd" = @p14, "MiddleName" = @p15, "ModifiedAt" = @p16, "NormalizedEmail" = @p17, "NormalizedUserName" = @p18, "PasswordChangedAt" = @p19, "PasswordHash" = @p20, "PhoneNumber" = @p21, "PhoneNumberConfirmed" = @p22, "ProfileImageUrl" = @p23, "SecurityStamp" = @p24, "Status" = @p25, "TwoFactorEnabled" = @p26, "UserName" = @p27
+WHERE "Id" = @p28 AND "ConcurrencyStamp" = @p29;
+2026-06-08 10:12:53.665 -07:00 [INF] Executed DbCommand (3ms) [Parameters=[@p3='?' (DbType = Int32), @p0='?' (DbType = Boolean), @p1='?' (DbType = DateTime), @p2='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+UPDATE "VerificationTokens" SET "IsUsed" = @p0, "ModifiedAt" = @p1, "UsedAt" = @p2
+WHERE "Id" = @p3;
+2026-06-08 10:12:53.672 -07:00 [INF] Executing ObjectResult, writing value of type 'Backend.Application.Common.Results.BaseResult'.
+2026-06-08 10:12:53.674 -07:00 [INF] Executed action Backend.Api.Controllers.AuthController.ConfirmForgotPassword (Backend.Api) in 274.6423ms
+2026-06-08 10:12:53.679 -07:00 [INF] Executed endpoint 'Backend.Api.Controllers.AuthController.ConfirmForgotPassword (Backend.Api)'
+2026-06-08 10:12:53.683 -07:00 [INF] Request finished HTTP/1.1 POST http://localhost:5014/api/v1/auth/confirm-forgot-password - 200 null application/json; charset=utf-8 308.6263ms
+2026-06-08 10:13:01.740 -07:00 [INF] Request starting HTTP/1.1 POST http://localhost:5014/api/v1/auth/confirm-forgot-password - application/json 87
+2026-06-08 10:13:01.763 -07:00 [INF] CORS policy execution successful.
+2026-06-08 10:13:01.769 -07:00 [INF] Executing endpoint 'Backend.Api.Controllers.AuthController.ConfirmForgotPassword (Backend.Api)'
+2026-06-08 10:13:01.771 -07:00 [INF] Route matched with {action = "ConfirmForgotPassword", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[Backend.Application.Common.Results.BaseResult]] ConfirmForgotPassword(Backend.Application.DTOs.Auth.ConfirmForgotPasswordDto, System.Threading.CancellationToken) on controller Backend.Api.Controllers.AuthController (Backend.Api).
+2026-06-08 10:13:01.775 -07:00 [INF] Executed DbCommand (1ms) [Parameters=[@__request_Token_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT v."Id", v."CreatedAt", v."CreatedBy", v."DeletedAt", v."DeletedBy", v."ExpiresAt", v."IsDeleted", v."IsUsed", v."ModifiedAt", v."ModifiedBy", v."Token", v."TokenType", v."UsedAt", v."UserId"
+FROM "VerificationTokens" AS v
+WHERE v."Token" = @__request_Token_0 AND v."TokenType" = 1
+LIMIT 1
+2026-06-08 10:13:01.787 -07:00 [INF] Executing ObjectResult, writing value of type 'Backend.Application.Common.Results.BaseResult'.
+2026-06-08 10:13:01.791 -07:00 [INF] Executed action Backend.Api.Controllers.AuthController.ConfirmForgotPassword (Backend.Api) in 17.7513ms
+2026-06-08 10:13:01.793 -07:00 [INF] Executed endpoint 'Backend.Api.Controllers.AuthController.ConfirmForgotPassword (Backend.Api)'
+2026-06-08 10:13:01.797 -07:00 [INF] Request finished HTTP/1.1 POST http://localhost:5014/api/v1/auth/confirm-forgot-password - 400 null application/json; charset=utf-8 56.8051ms
+2026-06-08 10:13:02.422 -07:00 [INF] Request starting HTTP/1.1 POST http://localhost:5014/api/v1/auth/confirm-forgot-password - application/json 87
+2026-06-08 10:13:02.426 -07:00 [INF] CORS policy execution successful.
+2026-06-08 10:13:02.427 -07:00 [INF] Executing endpoint 'Backend.Api.Controllers.AuthController.ConfirmForgotPassword (Backend.Api)'
+2026-06-08 10:13:02.441 -07:00 [INF] Route matched with {action = "ConfirmForgotPassword", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[Backend.Application.Common.Results.BaseResult]] ConfirmForgotPassword(Backend.Application.DTOs.Auth.ConfirmForgotPasswordDto, System.Threading.CancellationToken) on controller Backend.Api.Controllers.AuthController (Backend.Api).
+2026-06-08 10:13:02.444 -07:00 [INF] Executed DbCommand (1ms) [Parameters=[@__request_Token_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT v."Id", v."CreatedAt", v."CreatedBy", v."DeletedAt", v."DeletedBy", v."ExpiresAt", v."IsDeleted", v."IsUsed", v."ModifiedAt", v."ModifiedBy", v."Token", v."TokenType", v."UsedAt", v."UserId"
+FROM "VerificationTokens" AS v
+WHERE v."Token" = @__request_Token_0 AND v."TokenType" = 1
+LIMIT 1
+2026-06-08 10:13:02.476 -07:00 [INF] Executing ObjectResult, writing value of type 'Backend.Application.Common.Results.BaseResult'.
+2026-06-08 10:13:02.478 -07:00 [INF] Executed action Backend.Api.Controllers.AuthController.ConfirmForgotPassword (Backend.Api) in 35.8233ms
+2026-06-08 10:13:02.481 -07:00 [INF] Executed endpoint 'Backend.Api.Controllers.AuthController.ConfirmForgotPassword (Backend.Api)'
+2026-06-08 10:13:02.482 -07:00 [INF] Request finished HTTP/1.1 POST http://localhost:5014/api/v1/auth/confirm-forgot-password - 400 null application/json; charset=utf-8 60.5218ms
+2026-06-08 10:13:02.594 -07:00 [INF] Request starting HTTP/1.1 POST http://localhost:5014/api/v1/auth/confirm-forgot-password - application/json 87
+2026-06-08 10:13:02.612 -07:00 [INF] CORS policy execution successful.
+2026-06-08 10:13:02.622 -07:00 [INF] Executing endpoint 'Backend.Api.Controllers.AuthController.ConfirmForgotPassword (Backend.Api)'
+2026-06-08 10:13:02.625 -07:00 [INF] Route matched with {action = "ConfirmForgotPassword", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[Backend.Application.Common.Results.BaseResult]] ConfirmForgotPassword(Backend.Application.DTOs.Auth.ConfirmForgotPasswordDto, System.Threading.CancellationToken) on controller Backend.Api.Controllers.AuthController (Backend.Api).
+2026-06-08 10:13:02.646 -07:00 [INF] Executed DbCommand (1ms) [Parameters=[@__request_Token_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT v."Id", v."CreatedAt", v."CreatedBy", v."DeletedAt", v."DeletedBy", v."ExpiresAt", v."IsDeleted", v."IsUsed", v."ModifiedAt", v."ModifiedBy", v."Token", v."TokenType", v."UsedAt", v."UserId"
+FROM "VerificationTokens" AS v
+WHERE v."Token" = @__request_Token_0 AND v."TokenType" = 1
+LIMIT 1
+2026-06-08 10:13:02.657 -07:00 [INF] Executing ObjectResult, writing value of type 'Backend.Application.Common.Results.BaseResult'.
+2026-06-08 10:13:02.665 -07:00 [INF] Executed action Backend.Api.Controllers.AuthController.ConfirmForgotPassword (Backend.Api) in 20.9368ms
+2026-06-08 10:13:02.672 -07:00 [INF] Executed endpoint 'Backend.Api.Controllers.AuthController.ConfirmForgotPassword (Backend.Api)'
+2026-06-08 10:13:02.679 -07:00 [INF] Request finished HTTP/1.1 POST http://localhost:5014/api/v1/auth/confirm-forgot-password - 400 null application/json; charset=utf-8 84.6929ms
+2026-06-08 10:13:02.780 -07:00 [INF] Request starting HTTP/1.1 POST http://localhost:5014/api/v1/auth/confirm-forgot-password - application/json 87
+2026-06-08 10:13:02.791 -07:00 [INF] CORS policy execution successful.
+2026-06-08 10:13:02.796 -07:00 [INF] Executing endpoint 'Backend.Api.Controllers.AuthController.ConfirmForgotPassword (Backend.Api)'
+2026-06-08 10:13:02.805 -07:00 [INF] Route matched with {action = "ConfirmForgotPassword", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[Backend.Application.Common.Results.BaseResult]] ConfirmForgotPassword(Backend.Application.DTOs.Auth.ConfirmForgotPasswordDto, System.Threading.CancellationToken) on controller Backend.Api.Controllers.AuthController (Backend.Api).
+2026-06-08 10:13:02.815 -07:00 [INF] Executed DbCommand (1ms) [Parameters=[@__request_Token_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT v."Id", v."CreatedAt", v."CreatedBy", v."DeletedAt", v."DeletedBy", v."ExpiresAt", v."IsDeleted", v."IsUsed", v."ModifiedAt", v."ModifiedBy", v."Token", v."TokenType", v."UsedAt", v."UserId"
+FROM "VerificationTokens" AS v
+WHERE v."Token" = @__request_Token_0 AND v."TokenType" = 1
+LIMIT 1
+2026-06-08 10:13:02.830 -07:00 [INF] Executing ObjectResult, writing value of type 'Backend.Application.Common.Results.BaseResult'.
+2026-06-08 10:13:02.837 -07:00 [INF] Executed action Backend.Api.Controllers.AuthController.ConfirmForgotPassword (Backend.Api) in 23.833ms
+2026-06-08 10:13:02.839 -07:00 [INF] Executed endpoint 'Backend.Api.Controllers.AuthController.ConfirmForgotPassword (Backend.Api)'
+2026-06-08 10:13:02.841 -07:00 [INF] Request finished HTTP/1.1 POST http://localhost:5014/api/v1/auth/confirm-forgot-password - 400 null application/json; charset=utf-8 61.3978ms
+2026-06-08 10:13:02.913 -07:00 [INF] Request starting HTTP/1.1 POST http://localhost:5014/api/v1/auth/confirm-forgot-password - application/json 87
+2026-06-08 10:13:02.917 -07:00 [INF] CORS policy execution successful.
+2026-06-08 10:13:02.925 -07:00 [INF] Executing endpoint 'Backend.Api.Controllers.AuthController.ConfirmForgotPassword (Backend.Api)'
+2026-06-08 10:13:02.929 -07:00 [INF] Route matched with {action = "ConfirmForgotPassword", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[Backend.Application.Common.Results.BaseResult]] ConfirmForgotPassword(Backend.Application.DTOs.Auth.ConfirmForgotPasswordDto, System.Threading.CancellationToken) on controller Backend.Api.Controllers.AuthController (Backend.Api).
+2026-06-08 10:13:02.938 -07:00 [INF] Executed DbCommand (1ms) [Parameters=[@__request_Token_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT v."Id", v."CreatedAt", v."CreatedBy", v."DeletedAt", v."DeletedBy", v."ExpiresAt", v."IsDeleted", v."IsUsed", v."ModifiedAt", v."ModifiedBy", v."Token", v."TokenType", v."UsedAt", v."UserId"
+FROM "VerificationTokens" AS v
+WHERE v."Token" = @__request_Token_0 AND v."TokenType" = 1
+LIMIT 1
+2026-06-08 10:13:02.941 -07:00 [INF] Executing ObjectResult, writing value of type 'Backend.Application.Common.Results.BaseResult'.
+2026-06-08 10:13:02.944 -07:00 [INF] Executed action Backend.Api.Controllers.AuthController.ConfirmForgotPassword (Backend.Api) in 12.5797ms
+2026-06-08 10:13:02.956 -07:00 [INF] Executed endpoint 'Backend.Api.Controllers.AuthController.ConfirmForgotPassword (Backend.Api)'
+2026-06-08 10:13:02.961 -07:00 [INF] Request finished HTTP/1.1 POST http://localhost:5014/api/v1/auth/confirm-forgot-password - 400 null application/json; charset=utf-8 48.3977ms
+2026-06-08 10:13:10.215 -07:00 [INF] Request starting HTTP/1.1 POST http://localhost:5014/api/v1/auth/forgot-password - application/json 34
+2026-06-08 10:13:10.253 -07:00 [INF] CORS policy execution successful.
+2026-06-08 10:13:10.255 -07:00 [INF] Executing endpoint 'Backend.Api.Controllers.AuthController.ForgotPassword (Backend.Api)'
+2026-06-08 10:13:10.257 -07:00 [INF] Route matched with {action = "ForgotPassword", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[Backend.Application.Common.Results.BaseResult]] ForgotPassword(Backend.Application.DTOs.Auth.ForgotPasswordDto, System.Threading.CancellationToken) on controller Backend.Api.Controllers.AuthController (Backend.Api).
+2026-06-08 10:13:10.267 -07:00 [INF] Executed DbCommand (1ms) [Parameters=[@__request_Email_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT u."Id", u."AccessFailedCount", u."ConcurrencyStamp", u."CreatedAt", u."DateOfBirth", u."DeletedAt", u."Email", u."EmailConfirmed", u."FirstName", u."Gender", u."IsDeleted", u."KycTier", u."LastLoginAt", u."LastName", u."LockoutEnabled", u."LockoutEnd", u."MiddleName", u."ModifiedAt", u."NormalizedEmail", u."NormalizedUserName", u."PasswordChangedAt", u."PasswordHash", u."PhoneNumber", u."PhoneNumberConfirmed", u."ProfileImageUrl", u."SecurityStamp", u."Status", u."TwoFactorEnabled", u."UserName"
+FROM "Users" AS u
+WHERE NOT (u."IsDeleted") AND u."Email" = @__request_Email_0
+LIMIT 1
+2026-06-08 10:13:10.280 -07:00 [INF] Executed DbCommand (1ms) [Parameters=[@__user_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT v."Id", v."CreatedAt", v."CreatedBy", v."DeletedAt", v."DeletedBy", v."ExpiresAt", v."IsDeleted", v."IsUsed", v."ModifiedAt", v."ModifiedBy", v."Token", v."TokenType", v."UsedAt", v."UserId"
+FROM "VerificationTokens" AS v
+WHERE v."UserId" = @__user_Id_0 AND v."TokenType" = 1
+LIMIT 1
+2026-06-08 10:13:10.300 -07:00 [INF] Executed DbCommand (1ms) [Parameters=[@p13='?' (DbType = Int32), @p0='?' (DbType = DateTime), @p1='?', @p2='?' (DbType = DateTime), @p3='?', @p4='?' (DbType = DateTime), @p5='?' (DbType = Boolean), @p6='?' (DbType = Boolean), @p7='?' (DbType = DateTime), @p8='?', @p9='?', @p10='?' (DbType = Int32), @p11='?' (DbType = DateTime), @p12='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+UPDATE "VerificationTokens" SET "CreatedAt" = @p0, "CreatedBy" = @p1, "DeletedAt" = @p2, "DeletedBy" = @p3, "ExpiresAt" = @p4, "IsDeleted" = @p5, "IsUsed" = @p6, "ModifiedAt" = @p7, "ModifiedBy" = @p8, "Token" = @p9, "TokenType" = @p10, "UsedAt" = @p11, "UserId" = @p12
+WHERE "Id" = @p13;
+2026-06-08 10:13:12.510 -07:00 [INF] Email sent to user2@example.com with subject Forget Password
+2026-06-08 10:13:12.516 -07:00 [INF] Executing ObjectResult, writing value of type 'Backend.Application.Common.Results.BaseResult'.
+2026-06-08 10:13:12.538 -07:00 [INF] Executed action Backend.Api.Controllers.AuthController.ForgotPassword (Backend.Api) in 2274.6316ms
+2026-06-08 10:13:12.550 -07:00 [INF] Executed endpoint 'Backend.Api.Controllers.AuthController.ForgotPassword (Backend.Api)'
+2026-06-08 10:13:12.559 -07:00 [INF] Request finished HTTP/1.1 POST http://localhost:5014/api/v1/auth/forgot-password - 200 null application/json; charset=utf-8 2344.2109ms
+2026-06-08 10:13:33.282 -07:00 [INF] Request starting HTTP/1.1 POST http://localhost:5014/api/v1/auth/confirm-forgot-password - application/json 87
+2026-06-08 10:13:33.287 -07:00 [INF] CORS policy execution successful.
+2026-06-08 10:13:33.294 -07:00 [INF] Executing endpoint 'Backend.Api.Controllers.AuthController.ConfirmForgotPassword (Backend.Api)'
+2026-06-08 10:13:33.298 -07:00 [INF] Route matched with {action = "ConfirmForgotPassword", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[Backend.Application.Common.Results.BaseResult]] ConfirmForgotPassword(Backend.Application.DTOs.Auth.ConfirmForgotPasswordDto, System.Threading.CancellationToken) on controller Backend.Api.Controllers.AuthController (Backend.Api).
+2026-06-08 10:13:33.305 -07:00 [INF] Executed DbCommand (1ms) [Parameters=[@__request_Token_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT v."Id", v."CreatedAt", v."CreatedBy", v."DeletedAt", v."DeletedBy", v."ExpiresAt", v."IsDeleted", v."IsUsed", v."ModifiedAt", v."ModifiedBy", v."Token", v."TokenType", v."UsedAt", v."UserId"
+FROM "VerificationTokens" AS v
+WHERE v."Token" = @__request_Token_0 AND v."TokenType" = 1
+LIMIT 1
+2026-06-08 10:13:33.326 -07:00 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT u."Id", u."AccessFailedCount", u."ConcurrencyStamp", u."CreatedAt", u."DateOfBirth", u."DeletedAt", u."Email", u."EmailConfirmed", u."FirstName", u."Gender", u."IsDeleted", u."KycTier", u."LastLoginAt", u."LastName", u."LockoutEnabled", u."LockoutEnd", u."MiddleName", u."ModifiedAt", u."NormalizedEmail", u."NormalizedUserName", u."PasswordChangedAt", u."PasswordHash", u."PhoneNumber", u."PhoneNumberConfirmed", u."ProfileImageUrl", u."SecurityStamp", u."Status", u."TwoFactorEnabled", u."UserName"
+FROM "Users" AS u
+WHERE NOT (u."IsDeleted") AND u."Id" = @__p_0
+LIMIT 1
+2026-06-08 10:13:33.341 -07:00 [INF] Executing ObjectResult, writing value of type 'Backend.Application.Common.Results.BaseResult'.
+2026-06-08 10:13:33.343 -07:00 [INF] Executed action Backend.Api.Controllers.AuthController.ConfirmForgotPassword (Backend.Api) in 42.0338ms
+2026-06-08 10:13:33.349 -07:00 [INF] Executed endpoint 'Backend.Api.Controllers.AuthController.ConfirmForgotPassword (Backend.Api)'
+2026-06-08 10:13:33.350 -07:00 [INF] Request finished HTTP/1.1 POST http://localhost:5014/api/v1/auth/confirm-forgot-password - 400 null application/json; charset=utf-8 68.3224ms
+2026-06-08 10:13:40.923 -07:00 [INF] Request starting HTTP/1.1 POST http://localhost:5014/api/v1/auth/confirm-forgot-password - application/json 87
+2026-06-08 10:13:40.926 -07:00 [INF] CORS policy execution successful.
+2026-06-08 10:13:40.960 -07:00 [INF] Executing endpoint 'Backend.Api.Controllers.AuthController.ConfirmForgotPassword (Backend.Api)'
+2026-06-08 10:13:40.971 -07:00 [INF] Route matched with {action = "ConfirmForgotPassword", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[Backend.Application.Common.Results.BaseResult]] ConfirmForgotPassword(Backend.Application.DTOs.Auth.ConfirmForgotPasswordDto, System.Threading.CancellationToken) on controller Backend.Api.Controllers.AuthController (Backend.Api).
+2026-06-08 10:13:40.980 -07:00 [INF] Executed DbCommand (1ms) [Parameters=[@__request_Token_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT v."Id", v."CreatedAt", v."CreatedBy", v."DeletedAt", v."DeletedBy", v."ExpiresAt", v."IsDeleted", v."IsUsed", v."ModifiedAt", v."ModifiedBy", v."Token", v."TokenType", v."UsedAt", v."UserId"
+FROM "VerificationTokens" AS v
+WHERE v."Token" = @__request_Token_0 AND v."TokenType" = 1
+LIMIT 1
+2026-06-08 10:13:40.984 -07:00 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT u."Id", u."AccessFailedCount", u."ConcurrencyStamp", u."CreatedAt", u."DateOfBirth", u."DeletedAt", u."Email", u."EmailConfirmed", u."FirstName", u."Gender", u."IsDeleted", u."KycTier", u."LastLoginAt", u."LastName", u."LockoutEnabled", u."LockoutEnd", u."MiddleName", u."ModifiedAt", u."NormalizedEmail", u."NormalizedUserName", u."PasswordChangedAt", u."PasswordHash", u."PhoneNumber", u."PhoneNumberConfirmed", u."ProfileImageUrl", u."SecurityStamp", u."Status", u."TwoFactorEnabled", u."UserName"
+FROM "Users" AS u
+WHERE NOT (u."IsDeleted") AND u."Id" = @__p_0
+LIMIT 1
+2026-06-08 10:13:41.105 -07:00 [INF] Executed DbCommand (1ms) [Parameters=[@__normalizedUserName_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT u."Id", u."AccessFailedCount", u."ConcurrencyStamp", u."CreatedAt", u."DateOfBirth", u."DeletedAt", u."Email", u."EmailConfirmed", u."FirstName", u."Gender", u."IsDeleted", u."KycTier", u."LastLoginAt", u."LastName", u."LockoutEnabled", u."LockoutEnd", u."MiddleName", u."ModifiedAt", u."NormalizedEmail", u."NormalizedUserName", u."PasswordChangedAt", u."PasswordHash", u."PhoneNumber", u."PhoneNumberConfirmed", u."ProfileImageUrl", u."SecurityStamp", u."Status", u."TwoFactorEnabled", u."UserName"
+FROM "Users" AS u
+WHERE NOT (u."IsDeleted") AND u."NormalizedUserName" = @__normalizedUserName_0
+LIMIT 1
+2026-06-08 10:13:41.109 -07:00 [INF] Executed DbCommand (1ms) [Parameters=[@__normalizedEmail_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT u."Id", u."AccessFailedCount", u."ConcurrencyStamp", u."CreatedAt", u."DateOfBirth", u."DeletedAt", u."Email", u."EmailConfirmed", u."FirstName", u."Gender", u."IsDeleted", u."KycTier", u."LastLoginAt", u."LastName", u."LockoutEnabled", u."LockoutEnd", u."MiddleName", u."ModifiedAt", u."NormalizedEmail", u."NormalizedUserName", u."PasswordChangedAt", u."PasswordHash", u."PhoneNumber", u."PhoneNumberConfirmed", u."ProfileImageUrl", u."SecurityStamp", u."Status", u."TwoFactorEnabled", u."UserName"
+FROM "Users" AS u
+WHERE NOT (u."IsDeleted") AND u."NormalizedEmail" = @__normalizedEmail_0
+LIMIT 2
+2026-06-08 10:13:41.119 -07:00 [INF] Executed DbCommand (1ms) [Parameters=[@p28='?' (DbType = Int32), @p0='?' (DbType = Int32), @p1='?', @p29='?', @p2='?' (DbType = DateTime), @p3='?' (DbType = Date), @p4='?' (DbType = DateTime), @p5='?', @p6='?' (DbType = Boolean), @p7='?', @p8='?', @p9='?' (DbType = Boolean), @p10='?' (DbType = Int32), @p11='?' (DbType = DateTime), @p12='?', @p13='?' (DbType = Boolean), @p14='?' (DbType = DateTime), @p15='?', @p16='?' (DbType = DateTime), @p17='?', @p18='?', @p19='?' (DbType = DateTime), @p20='?', @p21='?', @p22='?' (DbType = Boolean), @p23='?', @p24='?', @p25='?', @p26='?' (DbType = Boolean), @p27='?'], CommandType='"Text"', CommandTimeout='30']
+UPDATE "Users" SET "AccessFailedCount" = @p0, "ConcurrencyStamp" = @p1, "CreatedAt" = @p2, "DateOfBirth" = @p3, "DeletedAt" = @p4, "Email" = @p5, "EmailConfirmed" = @p6, "FirstName" = @p7, "Gender" = @p8, "IsDeleted" = @p9, "KycTier" = @p10, "LastLoginAt" = @p11, "LastName" = @p12, "LockoutEnabled" = @p13, "LockoutEnd" = @p14, "MiddleName" = @p15, "ModifiedAt" = @p16, "NormalizedEmail" = @p17, "NormalizedUserName" = @p18, "PasswordChangedAt" = @p19, "PasswordHash" = @p20, "PhoneNumber" = @p21, "PhoneNumberConfirmed" = @p22, "ProfileImageUrl" = @p23, "SecurityStamp" = @p24, "Status" = @p25, "TwoFactorEnabled" = @p26, "UserName" = @p27
+WHERE "Id" = @p28 AND "ConcurrencyStamp" = @p29;
+2026-06-08 10:13:41.127 -07:00 [INF] Executed DbCommand (1ms) [Parameters=[@p3='?' (DbType = Int32), @p0='?' (DbType = Boolean), @p1='?' (DbType = DateTime), @p2='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+UPDATE "VerificationTokens" SET "IsUsed" = @p0, "ModifiedAt" = @p1, "UsedAt" = @p2
+WHERE "Id" = @p3;
+2026-06-08 10:13:41.138 -07:00 [INF] Executing ObjectResult, writing value of type 'Backend.Application.Common.Results.BaseResult'.
+2026-06-08 10:13:41.140 -07:00 [INF] Executed action Backend.Api.Controllers.AuthController.ConfirmForgotPassword (Backend.Api) in 164.1491ms
+2026-06-08 10:13:41.143 -07:00 [INF] Executed endpoint 'Backend.Api.Controllers.AuthController.ConfirmForgotPassword (Backend.Api)'
+2026-06-08 10:13:41.155 -07:00 [INF] Request finished HTTP/1.1 POST http://localhost:5014/api/v1/auth/confirm-forgot-password - 200 null application/json; charset=utf-8 231.7862ms
+2026-06-08 10:13:48.101 -07:00 [INF] Request starting HTTP/1.1 POST http://localhost:5014/api/v1/auth/login - application/json 60
+2026-06-08 10:13:48.107 -07:00 [INF] CORS policy execution successful.
+2026-06-08 10:13:48.110 -07:00 [INF] Executing endpoint 'Backend.Api.Controllers.AuthController.LoginUser (Backend.Api)'
+2026-06-08 10:13:48.119 -07:00 [INF] Route matched with {action = "LoginUser", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[Backend.Application.Common.Results.BaseResult]] LoginUser(Backend.Application.DTOs.Auth.LoginUserDto, System.Threading.CancellationToken) on controller Backend.Api.Controllers.AuthController (Backend.Api).
+2026-06-08 10:13:48.128 -07:00 [INF] Login attempt started for email: user2@example.com
+2026-06-08 10:13:48.146 -07:00 [INF] Executed DbCommand (2ms) [Parameters=[@__normalizedEmail_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT u."Id", u."AccessFailedCount", u."ConcurrencyStamp", u."CreatedAt", u."DateOfBirth", u."DeletedAt", u."Email", u."EmailConfirmed", u."FirstName", u."Gender", u."IsDeleted", u."KycTier", u."LastLoginAt", u."LastName", u."LockoutEnabled", u."LockoutEnd", u."MiddleName", u."ModifiedAt", u."NormalizedEmail", u."NormalizedUserName", u."PasswordChangedAt", u."PasswordHash", u."PhoneNumber", u."PhoneNumberConfirmed", u."ProfileImageUrl", u."SecurityStamp", u."Status", u."TwoFactorEnabled", u."UserName"
+FROM "Users" AS u
+WHERE NOT (u."IsDeleted") AND u."NormalizedEmail" = @__normalizedEmail_0
+LIMIT 2
+2026-06-08 10:13:48.369 -07:00 [WRN] Login failed - invalid password: user2@example.com
+2026-06-08 10:13:48.370 -07:00 [INF] Executing ObjectResult, writing value of type 'Backend.Application.Common.Results.BaseResult`1[[Backend.Application.DTOs.Auth.AuthResponseDto, Backend.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-06-08 10:13:48.377 -07:00 [INF] Executed action Backend.Api.Controllers.AuthController.LoginUser (Backend.Api) in 256.1928ms
+2026-06-08 10:13:48.380 -07:00 [INF] Executed endpoint 'Backend.Api.Controllers.AuthController.LoginUser (Backend.Api)'
+2026-06-08 10:13:48.381 -07:00 [INF] Request finished HTTP/1.1 POST http://localhost:5014/api/v1/auth/login - 400 null application/json; charset=utf-8 279.686ms
+2026-06-08 10:13:53.154 -07:00 [INF] Request starting HTTP/1.1 POST http://localhost:5014/api/v1/auth/login - application/json 61
+2026-06-08 10:13:53.181 -07:00 [INF] CORS policy execution successful.
+2026-06-08 10:13:53.182 -07:00 [INF] Executing endpoint 'Backend.Api.Controllers.AuthController.LoginUser (Backend.Api)'
+2026-06-08 10:13:53.187 -07:00 [INF] Route matched with {action = "LoginUser", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[Backend.Application.Common.Results.BaseResult]] LoginUser(Backend.Application.DTOs.Auth.LoginUserDto, System.Threading.CancellationToken) on controller Backend.Api.Controllers.AuthController (Backend.Api).
+2026-06-08 10:13:53.190 -07:00 [INF] Login attempt started for email: user2@example.com
+2026-06-08 10:13:53.197 -07:00 [INF] Executed DbCommand (1ms) [Parameters=[@__normalizedEmail_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT u."Id", u."AccessFailedCount", u."ConcurrencyStamp", u."CreatedAt", u."DateOfBirth", u."DeletedAt", u."Email", u."EmailConfirmed", u."FirstName", u."Gender", u."IsDeleted", u."KycTier", u."LastLoginAt", u."LastName", u."LockoutEnabled", u."LockoutEnd", u."MiddleName", u."ModifiedAt", u."NormalizedEmail", u."NormalizedUserName", u."PasswordChangedAt", u."PasswordHash", u."PhoneNumber", u."PhoneNumberConfirmed", u."ProfileImageUrl", u."SecurityStamp", u."Status", u."TwoFactorEnabled", u."UserName"
+FROM "Users" AS u
+WHERE NOT (u."IsDeleted") AND u."NormalizedEmail" = @__normalizedEmail_0
+LIMIT 2
+2026-06-08 10:13:53.332 -07:00 [INF] Executed DbCommand (1ms) [Parameters=[@__normalizedUserName_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT u."Id", u."AccessFailedCount", u."ConcurrencyStamp", u."CreatedAt", u."DateOfBirth", u."DeletedAt", u."Email", u."EmailConfirmed", u."FirstName", u."Gender", u."IsDeleted", u."KycTier", u."LastLoginAt", u."LastName", u."LockoutEnabled", u."LockoutEnd", u."MiddleName", u."ModifiedAt", u."NormalizedEmail", u."NormalizedUserName", u."PasswordChangedAt", u."PasswordHash", u."PhoneNumber", u."PhoneNumberConfirmed", u."ProfileImageUrl", u."SecurityStamp", u."Status", u."TwoFactorEnabled", u."UserName"
+FROM "Users" AS u
+WHERE NOT (u."IsDeleted") AND u."NormalizedUserName" = @__normalizedUserName_0
+LIMIT 1
+2026-06-08 10:13:53.345 -07:00 [INF] Executed DbCommand (1ms) [Parameters=[@__normalizedEmail_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT u."Id", u."AccessFailedCount", u."ConcurrencyStamp", u."CreatedAt", u."DateOfBirth", u."DeletedAt", u."Email", u."EmailConfirmed", u."FirstName", u."Gender", u."IsDeleted", u."KycTier", u."LastLoginAt", u."LastName", u."LockoutEnabled", u."LockoutEnd", u."MiddleName", u."ModifiedAt", u."NormalizedEmail", u."NormalizedUserName", u."PasswordChangedAt", u."PasswordHash", u."PhoneNumber", u."PhoneNumberConfirmed", u."ProfileImageUrl", u."SecurityStamp", u."Status", u."TwoFactorEnabled", u."UserName"
+FROM "Users" AS u
+WHERE NOT (u."IsDeleted") AND u."NormalizedEmail" = @__normalizedEmail_0
+LIMIT 2
+2026-06-08 10:13:53.361 -07:00 [INF] Executed DbCommand (1ms) [Parameters=[@p28='?' (DbType = Int32), @p0='?' (DbType = Int32), @p1='?', @p29='?', @p2='?' (DbType = DateTime), @p3='?' (DbType = Date), @p4='?' (DbType = DateTime), @p5='?', @p6='?' (DbType = Boolean), @p7='?', @p8='?', @p9='?' (DbType = Boolean), @p10='?' (DbType = Int32), @p11='?' (DbType = DateTime), @p12='?', @p13='?' (DbType = Boolean), @p14='?' (DbType = DateTime), @p15='?', @p16='?' (DbType = DateTime), @p17='?', @p18='?', @p19='?' (DbType = DateTime), @p20='?', @p21='?', @p22='?' (DbType = Boolean), @p23='?', @p24='?', @p25='?', @p26='?' (DbType = Boolean), @p27='?'], CommandType='"Text"', CommandTimeout='30']
+UPDATE "Users" SET "AccessFailedCount" = @p0, "ConcurrencyStamp" = @p1, "CreatedAt" = @p2, "DateOfBirth" = @p3, "DeletedAt" = @p4, "Email" = @p5, "EmailConfirmed" = @p6, "FirstName" = @p7, "Gender" = @p8, "IsDeleted" = @p9, "KycTier" = @p10, "LastLoginAt" = @p11, "LastName" = @p12, "LockoutEnabled" = @p13, "LockoutEnd" = @p14, "MiddleName" = @p15, "ModifiedAt" = @p16, "NormalizedEmail" = @p17, "NormalizedUserName" = @p18, "PasswordChangedAt" = @p19, "PasswordHash" = @p20, "PhoneNumber" = @p21, "PhoneNumberConfirmed" = @p22, "ProfileImageUrl" = @p23, "SecurityStamp" = @p24, "Status" = @p25, "TwoFactorEnabled" = @p26, "UserName" = @p27
+WHERE "Id" = @p28 AND "ConcurrencyStamp" = @p29;
+2026-06-08 10:13:53.376 -07:00 [INF] Executed DbCommand (1ms) [Parameters=[@__userId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT a0."Name"
+FROM "AspNetUserRoles" AS a
+INNER JOIN "AspNetRoles" AS a0 ON a."RoleId" = a0."Id"
+WHERE a."UserId" = @__userId_0
+2026-06-08 10:13:53.381 -07:00 [INF] Executed DbCommand (1ms) [Parameters=[@__userId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT a0."Name"
+FROM "AspNetUserRoles" AS a
+INNER JOIN "AspNetRoles" AS a0 ON a."RoleId" = a0."Id"
+WHERE a."UserId" = @__userId_0
+2026-06-08 10:13:53.395 -07:00 [INF] Executed DbCommand (1ms) [Parameters=[@p0='?' (DbType = DateTime), @p1='?', @p2='?' (DbType = DateTime), @p3='?', @p4='?' (DbType = DateTime), @p5='?' (DbType = Boolean), @p6='?' (DbType = DateTime), @p7='?', @p8='?' (DbType = DateTime), @p9='?', @p10='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "RefreshTokens" ("CreatedAt", "CreatedBy", "DeletedAt", "DeletedBy", "ExpiresAt", "IsDeleted", "ModifiedAt", "ModifiedBy", "RevokedAt", "Token", "UserId")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10)
+RETURNING "Id";
+2026-06-08 10:13:53.399 -07:00 [INF] Login successful for user: user2@example.com
+2026-06-08 10:13:53.406 -07:00 [INF] Executing ObjectResult, writing value of type 'Backend.Application.Common.Results.BaseResult`1[[Backend.Application.DTOs.Auth.AuthResponseDto, Backend.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-06-08 10:13:53.412 -07:00 [INF] Executed action Backend.Api.Controllers.AuthController.LoginUser (Backend.Api) in 222.6565ms
+2026-06-08 10:13:53.415 -07:00 [INF] Executed endpoint 'Backend.Api.Controllers.AuthController.LoginUser (Backend.Api)'
+2026-06-08 10:13:53.419 -07:00 [INF] Request finished HTTP/1.1 POST http://localhost:5014/api/v1/auth/login - 200 null application/json; charset=utf-8 264.4513ms
+2026-06-08 10:14:03.375 -07:00 [INF] Request starting HTTP/1.1 POST http://localhost:5014/api/v1/auth/confirm-forgot-password - application/json 87
+2026-06-08 10:14:03.379 -07:00 [INF] CORS policy execution successful.
+2026-06-08 10:14:03.386 -07:00 [INF] Executing endpoint 'Backend.Api.Controllers.AuthController.ConfirmForgotPassword (Backend.Api)'
+2026-06-08 10:14:03.393 -07:00 [INF] Route matched with {action = "ConfirmForgotPassword", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[Backend.Application.Common.Results.BaseResult]] ConfirmForgotPassword(Backend.Application.DTOs.Auth.ConfirmForgotPasswordDto, System.Threading.CancellationToken) on controller Backend.Api.Controllers.AuthController (Backend.Api).
+2026-06-08 10:14:03.403 -07:00 [INF] Executed DbCommand (3ms) [Parameters=[@__request_Token_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT v."Id", v."CreatedAt", v."CreatedBy", v."DeletedAt", v."DeletedBy", v."ExpiresAt", v."IsDeleted", v."IsUsed", v."ModifiedAt", v."ModifiedBy", v."Token", v."TokenType", v."UsedAt", v."UserId"
+FROM "VerificationTokens" AS v
+WHERE v."Token" = @__request_Token_0 AND v."TokenType" = 1
+LIMIT 1
+2026-06-08 10:14:03.419 -07:00 [INF] Executing ObjectResult, writing value of type 'Backend.Application.Common.Results.BaseResult'.
+2026-06-08 10:14:03.421 -07:00 [INF] Executed action Backend.Api.Controllers.AuthController.ConfirmForgotPassword (Backend.Api) in 25.3466ms
+2026-06-08 10:14:03.430 -07:00 [INF] Executed endpoint 'Backend.Api.Controllers.AuthController.ConfirmForgotPassword (Backend.Api)'
+2026-06-08 10:14:03.432 -07:00 [INF] Request finished HTTP/1.1 POST http://localhost:5014/api/v1/auth/confirm-forgot-password - 400 null application/json; charset=utf-8 57.2299ms
+2026-06-08 10:14:11.591 -07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5014/swagger/index.html - null null
+2026-06-08 10:14:11.597 -07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5014/swagger/index.html - 200 null text/html;charset=utf-8 5.4031ms
+2026-06-08 10:14:12.019 -07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5014/swagger/v1/swagger.json - null null
+2026-06-08 10:14:12.077 -07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5014/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 57.8494ms

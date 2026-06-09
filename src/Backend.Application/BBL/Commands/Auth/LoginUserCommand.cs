@@ -145,7 +145,7 @@ public class LoginUserCommand
                 Token = token,
                 RefreshToken = refreshToken,
                 Role = roles.FirstOrDefault() ?? string.Empty,
-                KycTier = user.KycTier,
+                KycTier = (int)user.KycTier,
                 Status = user.Status.ToString(),
                 ExpiresAt = DateTime.UtcNow.AddMinutes(60),
             };

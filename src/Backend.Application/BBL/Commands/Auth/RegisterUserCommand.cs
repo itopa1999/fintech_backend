@@ -91,11 +91,31 @@ public class RegisterUserCommand
                 LastName = request.LastName,
                 Email = request.Email,
                 UserName = request.Email,
+                KycTier = KycTier.Tier0,
                 Status = AccountStatus.Pending,
                 CreatedAt = DateTime.UtcNow,
                 IsDeleted = false,
                 EmailConfirmed = false
             };
+
+            // var kycProfile = new KycProfile
+            // {
+            //     UserId = user.Id,
+            //     VerificationStatus = VerificationStatus.NotSubmitted,
+            //     User = user
+            // };
+
+            // var bankAccount = new BankAccount
+            // {
+            //     UserId = user.Id,
+            //     BankName = string.Empty,
+            //     AccountName = string.Empty,
+            //     AccountNumber = string.Empty,
+            //     IsDefault = true,
+            //     User = user
+            // };
+
+
 
             var result = await _userManager.CreateAsync(user, request.Password);
 

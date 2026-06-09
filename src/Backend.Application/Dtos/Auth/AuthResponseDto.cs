@@ -72,3 +72,20 @@ public class ConfirmForgotPasswordDto
     [Compare("NewPassword", ErrorMessage = "Passwords do not match.")]
     public string ConfirmPassword { get; set; }
 }
+
+public class ChangePasswordDto
+{
+    [Required(ErrorMessage = "Current password is required")]
+    [MinLength(8, ErrorMessage = "Password must be at least 8 characters long.")]
+    [DataType(DataType.Password)]
+    public string CurrentPassword { get; set; }
+
+    [Required(ErrorMessage = "New password is required")]
+    [MinLength(8, ErrorMessage = "Password must be at least 8 characters long.")]
+    [DataType(DataType.Password)]
+    public string NewPassword { get; set; }
+
+    [Required(ErrorMessage = "Confirm password is required")]
+    [Compare("NewPassword", ErrorMessage = "Passwords do not match.")]
+    public string ConfirmPassword { get; set; }
+}

@@ -26,40 +26,30 @@ public class JwtTokenGenerator : IJwtTokenGenerator
         var roles = await _userManager.GetRolesAsync(user);
         var claims = new List<Claim>
         {
+            // Standard JWT claims
             new Claim(JwtRegisteredClaimNames.Sub, user.Id.ToString()),
+            new Claim(JwtRegisteredClaimNames.Email, user.Email ?? string.Empty),
+            new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()),
 
-            new Claim(JwtRegisteredClaimNames.Email,
-                user.Email ?? string.Empty),
+            // Standard .NET claim types
+            new Claim(ClaimTypes.NameIdentifier, user.Id.ToString()),
+            new Claim(ClaimTypes.Email, user.Email ?? string.Empty),
+            new Claim(ClaimTypes.Name, user.FullName ?? string.Empty),
 
-            new Claim(ClaimTypes.NameIdentifier,
-                user.Id.ToString()),
-
-            new Claim(ClaimTypes.Email,
-                user.Email ?? string.Empty),
-
-            new Claim(ClaimTypes.Name,
-                user.FullName),
-
-            new Claim(JwtRegisteredClaimNames.Jti,
-                Guid.NewGuid().ToString())
+            // === CUSTOM CLAIMS for BaseControllerBase ===
+            new Claim("UserId", user.Id.ToString()),
+            new Claim("UserEmail", user.Email ?? string.Empty),
+            new Claim("FullName", user.FullName ?? string.Empty),
+            new Claim("Platform", "web" ?? "swagger"),
+            new Claim("UserRole", roles.FirstOrDefault() ?? "")
         };
 
-        claims.AddRange(roles.Select(role =>
-            new Claim(ClaimTypes.Role, role)
-        ));
+        // Add each role as a separate claim (for Role-based authorization)
+        claims.AddRange(roles.Select(role => new Claim(ClaimTypes.Role, role)));
 
-        var key = new SymmetricSecurityKey(
-            Encoding.UTF8.GetBytes(_jwtSettings.Key)
-        );
-
-        var credentials = new SigningCredentials(
-            key,
-            SecurityAlgorithms.HmacSha256
-        );
-
-        var expires = DateTime.UtcNow.AddMinutes(
-            _jwtSettings.DurationInMinutes
-        );
+        var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_jwtSettings.Key));
+        var credentials = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
+        var expires = DateTime.UtcNow.AddMinutes(_jwtSettings.DurationInMinutes);
 
         var token = new JwtSecurityToken(
             issuer: _jwtSettings.Issuer,
@@ -69,7 +59,6 @@ public class JwtTokenGenerator : IJwtTokenGenerator
             signingCredentials: credentials
         );
 
-        return new JwtSecurityTokenHandler()
-            .WriteToken(token);
+        return new JwtSecurityTokenHandler().WriteToken(token);
     }
 }

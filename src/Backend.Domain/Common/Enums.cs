@@ -11,6 +11,7 @@ public enum AccountStatus
 
 public enum VerificationStatus
 {
+    NotSubmitted,
     Pending,
     InReview,
     Approved,
@@ -28,4 +29,12 @@ public enum VerificationTokenType
 {
     EmailVerification,
     PasswordReset
+}
+
+public enum KycTier
+{
+    Tier0 = 0, // No KYC
+    Tier1 = 1, // Basic KYC - BVN or NIN
+    Tier2 = 2, // Enhanced KYC - ID + Selfie
+    Tier3 = 3  // Full KYC - ID + Selfie + Proof of Address
 }

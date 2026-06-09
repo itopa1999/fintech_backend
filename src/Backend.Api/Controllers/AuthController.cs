@@ -7,6 +7,8 @@ using Backend.Api.Extensions;
 using static Backend.Application.BBL.Commands.Auth.RegisterUserCommand;
 using Backend.Application.BBL.Commands.Auth;
 using static Backend.Application.BBL.Commands.Auth.RefreshTokenCommand;
+using Microsoft.AspNetCore.Authorization;
+using Backend.Api.Controllers.Shared;
 
 namespace Backend.Api.Controllers;
 
@@ -14,7 +16,7 @@ namespace Backend.Api.Controllers;
 [Route("api/v1/auth")]
 [ApiVersion("1")]
 [ApiExplorerSettings(GroupName = "v1")]
-public class AuthController : ControllerBase
+public class AuthController : BaseController
 {
     private readonly IMediator _mediator;
 
@@ -101,6 +103,7 @@ public class AuthController : ControllerBase
     }
 
     [HttpPost("logout")]
+    [Authorize]
     [ProducesResponseType(typeof(BaseResult), (int)HttpStatusCode.OK)]
     [ProducesResponseType(typeof(BaseResult), (int)HttpStatusCode.Unauthorized)]
     [ProducesResponseType(typeof(BaseResult), (int)HttpStatusCode.BadRequest)]
@@ -135,6 +138,26 @@ public class AuthController : ControllerBase
         var command = new ConfirmForgotPasswordCommand.Command
         {
             Token = dto.Token.Trim(),
+            NewPassword = dto.NewPassword.Trim(),
+            ConfirmPassword = dto.ConfirmPassword.Trim()
+        };
+        var result = await _mediator.Send(command, cancellationToken);
+        return result.ToActionResult();
+    }
+
+    [HttpPost("change-password")]
+    [Authorize]
+    [ProducesResponseType(typeof(BaseResult), (int)HttpStatusCode.OK)]
+    [ProducesResponseType(typeof(BaseResult), (int)HttpStatusCode.Unauthorized)]
+    [ProducesResponseType(typeof(BaseResult), (int)HttpStatusCode.BadRequest)]
+    public async Task<ActionResult<BaseResult>> ChangePassword([FromBody] ChangePasswordDto dto, CancellationToken cancellationToken)
+    {
+        var userId = CurrentUserId;
+
+        var command = new ChangePasswordCommand.Command
+        {
+            UserId = userId.Value,
+            CurrentPassword = dto.CurrentPassword.Trim(),
             NewPassword = dto.NewPassword.Trim(),
             ConfirmPassword = dto.ConfirmPassword.Trim()
         };
