@@ -27,7 +27,7 @@ public class CreateKycTierOneCommand
         {
             var exisitingKyc = await _context.KycProfiles.FirstOrDefaultAsync(k => k.UserId == request.UserId, cancellationToken);
             if (exisitingKyc != null && (exisitingKyc.BVN == request.BVN || exisitingKyc.NIN == request.NIN))
-                return new BaseResult(HttpStatusCode.BadRequest, "");
+                return new BaseResult(HttpStatusCode.BadRequest, "KYC information cannot be changed");
             
             var kyc = new Kyc
             {
