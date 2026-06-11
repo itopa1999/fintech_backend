@@ -65,6 +65,21 @@ public sealed class EmailService : IEmailService
         email.Subject = subject;
         email.Body = new BodyBuilder { HtmlBody = htmlBody }.ToMessageBody();
 
+        if (_settings.UseConsoleEmail)
+        {
+            var logMessage = $"""
+                [CONSOLE EMAIL] To: {toEmail}
+                Subject: {subject}
+                Body:
+                {htmlBody}
+                """;
+            _logger.LogInformation(logMessage);
+            
+            Console.WriteLine(logMessage);
+            await Task.CompletedTask;
+            return;
+        }
+
         // Send via SMTP
         using var smtp = new SmtpClient();
         await smtp.ConnectAsync(_settings.Host, _settings.Port, _settings.UseSSL, cancellationToken);

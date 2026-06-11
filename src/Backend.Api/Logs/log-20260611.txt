@@ -1,0 +1,266 @@
+2026-06-11 00:43:49.251 -07:00 [WRN] Entity 'User' has a global query filter defined and is the required end of a relationship with the entity 'RefreshToken'. This may lead to unexpected results when the required entity is filtered out. Either configure the navigation as optional, or define matching query filters for both entities in the navigation. See https://go.microsoft.com/fwlink/?linkid=2131316 for more information.
+2026-06-11 00:43:53.658 -07:00 [INF] Executed DbCommand (188ms) [Parameters=[@__normalizedName_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Id", a."ConcurrencyStamp", a."Name", a."NormalizedName"
+FROM "AspNetRoles" AS a
+WHERE a."NormalizedName" = @__normalizedName_0
+LIMIT 1
+2026-06-11 00:43:53.784 -07:00 [INF] Executed DbCommand (3ms) [Parameters=[@__normalizedName_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Id", a."ConcurrencyStamp", a."Name", a."NormalizedName"
+FROM "AspNetRoles" AS a
+WHERE a."NormalizedName" = @__normalizedName_0
+LIMIT 1
+2026-06-11 00:43:53.790 -07:00 [INF] Executed DbCommand (1ms) [Parameters=[@__normalizedName_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Id", a."ConcurrencyStamp", a."Name", a."NormalizedName"
+FROM "AspNetRoles" AS a
+WHERE a."NormalizedName" = @__normalizedName_0
+LIMIT 1
+2026-06-11 00:43:54.220 -07:00 [INF] User profile is available. Using 'C:\Users\User\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-06-11 00:43:54.509 -07:00 [INF] Now listening on: http://localhost:5014
+2026-06-11 00:43:54.518 -07:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-06-11 00:43:54.520 -07:00 [INF] Hosting environment: Development
+2026-06-11 00:43:54.522 -07:00 [INF] Content root path: C:\Users\User\Desktop\lucky\fintech\src\Backend.Api
+2026-06-11 00:44:28.119 -07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5014/swagger/index.html - null null
+2026-06-11 00:44:28.313 -07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5014/swagger/index.html - 200 null text/html;charset=utf-8 195.6545ms
+2026-06-11 00:44:28.368 -07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5014/swagger/swagger-ui-bundle.js - null null
+2026-06-11 00:44:28.368 -07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5014/swagger/swagger-ui-standalone-preset.js - null null
+2026-06-11 00:44:28.402 -07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5014/swagger/swagger-ui.css - null null
+2026-06-11 00:44:28.509 -07:00 [INF] Sending file. Request path: '/swagger-ui.css'. Physical path: 'N/A'
+2026-06-11 00:44:28.517 -07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5014/swagger/swagger-ui.css - 200 143943 text/css 114.6376ms
+2026-06-11 00:44:28.526 -07:00 [INF] Sending file. Request path: '/swagger-ui-standalone-preset.js'. Physical path: 'N/A'
+2026-06-11 00:44:28.532 -07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5014/swagger/swagger-ui-standalone-preset.js - 200 339486 text/javascript 163.7805ms
+2026-06-11 00:44:28.588 -07:00 [INF] Sending file. Request path: '/swagger-ui-bundle.js'. Physical path: 'N/A'
+2026-06-11 00:44:28.592 -07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5014/swagger/swagger-ui-bundle.js - 200 1096145 text/javascript 223.8031ms
+2026-06-11 00:44:29.003 -07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5014/swagger/v1/swagger.json - null null
+2026-06-11 00:44:29.144 -07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5014/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 141.3764ms
+2026-06-11 00:44:30.611 -07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5014/swagger/favicon-32x32.png - null null
+2026-06-11 00:44:30.638 -07:00 [INF] Sending file. Request path: '/favicon-32x32.png'. Physical path: 'N/A'
+2026-06-11 00:44:30.648 -07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5014/swagger/favicon-32x32.png - 200 628 image/png 37.7026ms
+2026-06-11 00:44:32.376 -07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5014/swagger/index.html - null null
+2026-06-11 00:44:32.399 -07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5014/swagger/index.html - 200 null text/html;charset=utf-8 23.2335ms
+2026-06-11 00:44:32.548 -07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5014/swagger/v1/swagger.json - null null
+2026-06-11 00:44:32.628 -07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5014/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 80.5717ms
+2026-06-11 00:44:40.061 -07:00 [INF] Request starting HTTP/1.1 POST http://localhost:5014/api/v1/kyc/create-tier-one - application/json 40
+2026-06-11 00:44:40.073 -07:00 [WRN] Failed to determine the https port for redirect.
+2026-06-11 00:44:40.172 -07:00 [INF] CORS policy execution successful.
+2026-06-11 00:44:40.297 -07:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2026-06-11 00:44:40.303 -07:00 [INF] AuthenticationScheme: Bearer was challenged.
+2026-06-11 00:44:40.307 -07:00 [INF] Request finished HTTP/1.1 POST http://localhost:5014/api/v1/kyc/create-tier-one - 401 0 null 245.7466ms
+2026-06-11 00:44:56.446 -07:00 [INF] Request starting HTTP/1.1 POST http://localhost:5014/api/v1/auth/login - application/json 60
+2026-06-11 00:44:56.454 -07:00 [INF] CORS policy execution successful.
+2026-06-11 00:44:56.464 -07:00 [INF] Executing endpoint 'Backend.Api.Controllers.AuthController.LoginUser (Backend.Api)'
+2026-06-11 00:44:56.560 -07:00 [INF] Route matched with {action = "LoginUser", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[Backend.Application.Common.Results.BaseResult]] LoginUser(Backend.Application.DTOs.Auth.LoginUserDto, System.Threading.CancellationToken) on controller Backend.Api.Controllers.AuthController (Backend.Api).
+2026-06-11 00:44:56.656 -07:00 [INF] Login attempt started for email: user2@example.com
+2026-06-11 00:44:56.826 -07:00 [INF] Executed DbCommand (61ms) [Parameters=[@__normalizedEmail_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT u."Id", u."AccessFailedCount", u."ConcurrencyStamp", u."CreatedAt", u."DateOfBirth", u."DeletedAt", u."Email", u."EmailConfirmed", u."FirstName", u."Gender", u."IsDeleted", u."KycTier", u."LastLoginAt", u."LastName", u."LockoutEnabled", u."LockoutEnd", u."MiddleName", u."ModifiedAt", u."NormalizedEmail", u."NormalizedUserName", u."PasswordChangedAt", u."PasswordHash", u."PhoneNumber", u."PhoneNumberConfirmed", u."ProfileImageUrl", u."SecurityStamp", u."Status", u."TwoFactorEnabled", u."UserName"
+FROM "Users" AS u
+WHERE NOT (u."IsDeleted") AND u."NormalizedEmail" = @__normalizedEmail_0
+LIMIT 2
+2026-06-11 00:44:57.098 -07:00 [INF] Executed DbCommand (1ms) [Parameters=[@__normalizedUserName_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT u."Id", u."AccessFailedCount", u."ConcurrencyStamp", u."CreatedAt", u."DateOfBirth", u."DeletedAt", u."Email", u."EmailConfirmed", u."FirstName", u."Gender", u."IsDeleted", u."KycTier", u."LastLoginAt", u."LastName", u."LockoutEnabled", u."LockoutEnd", u."MiddleName", u."ModifiedAt", u."NormalizedEmail", u."NormalizedUserName", u."PasswordChangedAt", u."PasswordHash", u."PhoneNumber", u."PhoneNumberConfirmed", u."ProfileImageUrl", u."SecurityStamp", u."Status", u."TwoFactorEnabled", u."UserName"
+FROM "Users" AS u
+WHERE NOT (u."IsDeleted") AND u."NormalizedUserName" = @__normalizedUserName_0
+LIMIT 1
+2026-06-11 00:44:57.111 -07:00 [INF] Executed DbCommand (1ms) [Parameters=[@__normalizedEmail_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT u."Id", u."AccessFailedCount", u."ConcurrencyStamp", u."CreatedAt", u."DateOfBirth", u."DeletedAt", u."Email", u."EmailConfirmed", u."FirstName", u."Gender", u."IsDeleted", u."KycTier", u."LastLoginAt", u."LastName", u."LockoutEnabled", u."LockoutEnd", u."MiddleName", u."ModifiedAt", u."NormalizedEmail", u."NormalizedUserName", u."PasswordChangedAt", u."PasswordHash", u."PhoneNumber", u."PhoneNumberConfirmed", u."ProfileImageUrl", u."SecurityStamp", u."Status", u."TwoFactorEnabled", u."UserName"
+FROM "Users" AS u
+WHERE NOT (u."IsDeleted") AND u."NormalizedEmail" = @__normalizedEmail_0
+LIMIT 2
+2026-06-11 00:44:57.403 -07:00 [INF] Executed DbCommand (146ms) [Parameters=[@p28='?' (DbType = Int32), @p0='?' (DbType = Int32), @p1='?', @p29='?', @p2='?' (DbType = DateTime), @p3='?' (DbType = Date), @p4='?' (DbType = DateTime), @p5='?', @p6='?' (DbType = Boolean), @p7='?', @p8='?', @p9='?' (DbType = Boolean), @p10='?' (DbType = Int32), @p11='?' (DbType = DateTime), @p12='?', @p13='?' (DbType = Boolean), @p14='?' (DbType = DateTime), @p15='?', @p16='?' (DbType = DateTime), @p17='?', @p18='?', @p19='?' (DbType = DateTime), @p20='?', @p21='?', @p22='?' (DbType = Boolean), @p23='?', @p24='?', @p25='?', @p26='?' (DbType = Boolean), @p27='?'], CommandType='"Text"', CommandTimeout='30']
+UPDATE "Users" SET "AccessFailedCount" = @p0, "ConcurrencyStamp" = @p1, "CreatedAt" = @p2, "DateOfBirth" = @p3, "DeletedAt" = @p4, "Email" = @p5, "EmailConfirmed" = @p6, "FirstName" = @p7, "Gender" = @p8, "IsDeleted" = @p9, "KycTier" = @p10, "LastLoginAt" = @p11, "LastName" = @p12, "LockoutEnabled" = @p13, "LockoutEnd" = @p14, "MiddleName" = @p15, "ModifiedAt" = @p16, "NormalizedEmail" = @p17, "NormalizedUserName" = @p18, "PasswordChangedAt" = @p19, "PasswordHash" = @p20, "PhoneNumber" = @p21, "PhoneNumberConfirmed" = @p22, "ProfileImageUrl" = @p23, "SecurityStamp" = @p24, "Status" = @p25, "TwoFactorEnabled" = @p26, "UserName" = @p27
+WHERE "Id" = @p28 AND "ConcurrencyStamp" = @p29;
+2026-06-11 00:44:57.578 -07:00 [INF] Executed DbCommand (63ms) [Parameters=[@__userId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT a0."Name"
+FROM "AspNetUserRoles" AS a
+INNER JOIN "AspNetRoles" AS a0 ON a."RoleId" = a0."Id"
+WHERE a."UserId" = @__userId_0
+2026-06-11 00:44:57.633 -07:00 [INF] Executed DbCommand (1ms) [Parameters=[@__userId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT a0."Name"
+FROM "AspNetUserRoles" AS a
+INNER JOIN "AspNetRoles" AS a0 ON a."RoleId" = a0."Id"
+WHERE a."UserId" = @__userId_0
+2026-06-11 00:44:57.819 -07:00 [INF] Executed DbCommand (113ms) [Parameters=[@p0='?' (DbType = DateTime), @p1='?', @p2='?' (DbType = DateTime), @p3='?', @p4='?' (DbType = DateTime), @p5='?' (DbType = Boolean), @p6='?' (DbType = DateTime), @p7='?', @p8='?' (DbType = DateTime), @p9='?', @p10='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "RefreshTokens" ("CreatedAt", "CreatedBy", "DeletedAt", "DeletedBy", "ExpiresAt", "IsDeleted", "ModifiedAt", "ModifiedBy", "RevokedAt", "Token", "UserId")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10)
+RETURNING "Id";
+2026-06-11 00:44:57.834 -07:00 [INF] Login successful for user: user2@example.com
+2026-06-11 00:44:57.844 -07:00 [INF] Executing ObjectResult, writing value of type 'Backend.Application.Common.Results.BaseResult`1[[Backend.Application.DTOs.Auth.AuthResponseDto, Backend.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-06-11 00:44:57.876 -07:00 [INF] Executed action Backend.Api.Controllers.AuthController.LoginUser (Backend.Api) in 1309.9264ms
+2026-06-11 00:44:57.878 -07:00 [INF] Executed endpoint 'Backend.Api.Controllers.AuthController.LoginUser (Backend.Api)'
+2026-06-11 00:44:57.889 -07:00 [INF] Request finished HTTP/1.1 POST http://localhost:5014/api/v1/auth/login - 200 null application/json; charset=utf-8 1443.3024ms
+2026-06-11 00:45:16.300 -07:00 [INF] Request starting HTTP/1.1 POST http://localhost:5014/api/v1/kyc/create-tier-one - application/json 40
+2026-06-11 00:45:16.310 -07:00 [INF] CORS policy execution successful.
+2026-06-11 00:45:16.404 -07:00 [INF] Executing endpoint 'Backend.Api.Controllers.KycController.CreateKycTierOne (Backend.Api)'
+2026-06-11 00:45:16.410 -07:00 [INF] Route matched with {action = "CreateKycTierOne", controller = "Kyc"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[Backend.Application.Common.Results.BaseResult]] CreateKycTierOne(Backend.Application.DTOs.Kyc.CreateKycTierOneDto, System.Threading.CancellationToken) on controller Backend.Api.Controllers.KycController (Backend.Api).
+2026-06-11 00:45:16.502 -07:00 [INF] Executed DbCommand (56ms) [Parameters=[@__request_UserId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT k."Id", k."ApprovedAt", k."BVN", k."CreatedAt", k."CreatedBy", k."DeletedAt", k."DeletedBy", k."IdDocumentUrl", k."IsDeleted", k."ModifiedAt", k."ModifiedBy", k."NIN", k."RiskScore", k."SelfieUrl", k."UserId", k."VerificationProvider", k."VerificationStatus"
+FROM "KycProfiles" AS k
+WHERE NOT (k."IsDeleted") AND k."UserId" = @__request_UserId_0
+LIMIT 1
+2026-06-11 00:45:16.534 -07:00 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT u."Id", u."AccessFailedCount", u."ConcurrencyStamp", u."CreatedAt", u."DateOfBirth", u."DeletedAt", u."Email", u."EmailConfirmed", u."FirstName", u."Gender", u."IsDeleted", u."KycTier", u."LastLoginAt", u."LastName", u."LockoutEnabled", u."LockoutEnd", u."MiddleName", u."ModifiedAt", u."NormalizedEmail", u."NormalizedUserName", u."PasswordChangedAt", u."PasswordHash", u."PhoneNumber", u."PhoneNumberConfirmed", u."ProfileImageUrl", u."SecurityStamp", u."Status", u."TwoFactorEnabled", u."UserName"
+FROM "Users" AS u
+WHERE NOT (u."IsDeleted") AND u."Id" = @__p_0
+LIMIT 1
+2026-06-11 00:45:16.676 -07:00 [INF] Executed DbCommand (57ms) [Parameters=[@p0='?' (DbType = DateTime), @p1='?', @p2='?' (DbType = DateTime), @p3='?', @p4='?' (DbType = DateTime), @p5='?', @p6='?', @p7='?' (DbType = Boolean), @p8='?' (DbType = DateTime), @p9='?', @p10='?', @p11='?' (DbType = Decimal), @p12='?', @p13='?' (DbType = Int32), @p14='?', @p15='?', @p17='?' (DbType = Int32), @p18='?', @p16='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "KycProfiles" ("ApprovedAt", "BVN", "CreatedAt", "CreatedBy", "DeletedAt", "DeletedBy", "IdDocumentUrl", "IsDeleted", "ModifiedAt", "ModifiedBy", "NIN", "RiskScore", "SelfieUrl", "UserId", "VerificationProvider", "VerificationStatus")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12, @p13, @p14, @p15)
+RETURNING "Id";
+UPDATE "Users" SET "KycTier" = @p16
+WHERE "Id" = @p17 AND "ConcurrencyStamp" = @p18;
+2026-06-11 00:45:16.710 -07:00 [INF] Executing ObjectResult, writing value of type 'Backend.Application.Common.Results.BaseResult'.
+2026-06-11 00:45:16.717 -07:00 [INF] Executed action Backend.Api.Controllers.KycController.CreateKycTierOne (Backend.Api) in 304.7501ms
+2026-06-11 00:45:16.720 -07:00 [INF] Executed endpoint 'Backend.Api.Controllers.KycController.CreateKycTierOne (Backend.Api)'
+2026-06-11 00:45:16.722 -07:00 [INF] Request finished HTTP/1.1 POST http://localhost:5014/api/v1/kyc/create-tier-one - 200 null application/json; charset=utf-8 421.8575ms
+2026-06-11 00:45:27.919 -07:00 [INF] Request starting HTTP/1.1 POST http://localhost:5014/api/v1/kyc/create-tier-one - application/json 40
+2026-06-11 00:45:27.923 -07:00 [INF] CORS policy execution successful.
+2026-06-11 00:45:27.934 -07:00 [INF] Executing endpoint 'Backend.Api.Controllers.KycController.CreateKycTierOne (Backend.Api)'
+2026-06-11 00:45:27.938 -07:00 [INF] Route matched with {action = "CreateKycTierOne", controller = "Kyc"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[Backend.Application.Common.Results.BaseResult]] CreateKycTierOne(Backend.Application.DTOs.Kyc.CreateKycTierOneDto, System.Threading.CancellationToken) on controller Backend.Api.Controllers.KycController (Backend.Api).
+2026-06-11 00:45:27.950 -07:00 [INF] Executed DbCommand (1ms) [Parameters=[@__request_UserId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT k."Id", k."ApprovedAt", k."BVN", k."CreatedAt", k."CreatedBy", k."DeletedAt", k."DeletedBy", k."IdDocumentUrl", k."IsDeleted", k."ModifiedAt", k."ModifiedBy", k."NIN", k."RiskScore", k."SelfieUrl", k."UserId", k."VerificationProvider", k."VerificationStatus"
+FROM "KycProfiles" AS k
+WHERE NOT (k."IsDeleted") AND k."UserId" = @__request_UserId_0
+LIMIT 1
+2026-06-11 00:45:27.966 -07:00 [INF] Executing ObjectResult, writing value of type 'Backend.Application.Common.Results.BaseResult'.
+2026-06-11 00:45:27.972 -07:00 [INF] Executed action Backend.Api.Controllers.KycController.CreateKycTierOne (Backend.Api) in 31.1543ms
+2026-06-11 00:45:27.976 -07:00 [INF] Executed endpoint 'Backend.Api.Controllers.KycController.CreateKycTierOne (Backend.Api)'
+2026-06-11 00:45:27.978 -07:00 [INF] Request finished HTTP/1.1 POST http://localhost:5014/api/v1/kyc/create-tier-one - 400 null application/json; charset=utf-8 58.8419ms
+2026-06-11 00:46:18.908 -07:00 [INF] Application is shutting down...
+2026-06-11 00:46:28.692 -07:00 [WRN] Entity 'User' has a global query filter defined and is the required end of a relationship with the entity 'RefreshToken'. This may lead to unexpected results when the required entity is filtered out. Either configure the navigation as optional, or define matching query filters for both entities in the navigation. See https://go.microsoft.com/fwlink/?linkid=2131316 for more information.
+2026-06-11 00:46:30.636 -07:00 [INF] Executed DbCommand (100ms) [Parameters=[@__normalizedName_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Id", a."ConcurrencyStamp", a."Name", a."NormalizedName"
+FROM "AspNetRoles" AS a
+WHERE a."NormalizedName" = @__normalizedName_0
+LIMIT 1
+2026-06-11 00:46:30.819 -07:00 [INF] Executed DbCommand (2ms) [Parameters=[@__normalizedName_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Id", a."ConcurrencyStamp", a."Name", a."NormalizedName"
+FROM "AspNetRoles" AS a
+WHERE a."NormalizedName" = @__normalizedName_0
+LIMIT 1
+2026-06-11 00:46:30.867 -07:00 [INF] Executed DbCommand (9ms) [Parameters=[@__normalizedName_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Id", a."ConcurrencyStamp", a."Name", a."NormalizedName"
+FROM "AspNetRoles" AS a
+WHERE a."NormalizedName" = @__normalizedName_0
+LIMIT 1
+2026-06-11 00:46:31.146 -07:00 [INF] User profile is available. Using 'C:\Users\User\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-06-11 00:46:31.297 -07:00 [INF] Now listening on: http://localhost:5014
+2026-06-11 00:46:31.308 -07:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-06-11 00:46:31.319 -07:00 [INF] Hosting environment: Development
+2026-06-11 00:46:31.324 -07:00 [INF] Content root path: C:\Users\User\Desktop\lucky\fintech\src\Backend.Api
+2026-06-11 00:46:47.788 -07:00 [INF] Request starting HTTP/1.1 POST http://localhost:5014/api/v1/kyc/create-tier-one - application/json 40
+2026-06-11 00:46:47.835 -07:00 [WRN] Failed to determine the https port for redirect.
+2026-06-11 00:46:47.876 -07:00 [INF] CORS policy execution successful.
+2026-06-11 00:46:47.969 -07:00 [INF] Executing endpoint 'Backend.Api.Controllers.KycController.CreateKycTierOne (Backend.Api)'
+2026-06-11 00:46:47.989 -07:00 [INF] Route matched with {action = "CreateKycTierOne", controller = "Kyc"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[Backend.Application.Common.Results.BaseResult]] CreateKycTierOne(Backend.Application.DTOs.Kyc.CreateKycTierOneDto, System.Threading.CancellationToken) on controller Backend.Api.Controllers.KycController (Backend.Api).
+2026-06-11 00:46:48.089 -07:00 [INF] Executing ObjectResult, writing value of type 'Backend.Application.Common.Results.BaseResult'.
+2026-06-11 00:46:48.132 -07:00 [INF] Executed action Backend.Api.Controllers.KycController.CreateKycTierOne (Backend.Api) in 131.4996ms
+2026-06-11 00:46:48.135 -07:00 [INF] Executed endpoint 'Backend.Api.Controllers.KycController.CreateKycTierOne (Backend.Api)'
+2026-06-11 00:46:48.139 -07:00 [INF] Request finished HTTP/1.1 POST http://localhost:5014/api/v1/kyc/create-tier-one - 400 null application/json; charset=utf-8 352.6378ms
+2026-06-11 00:47:07.745 -07:00 [INF] Request starting HTTP/1.1 POST http://localhost:5014/api/v1/kyc/create-tier-one - application/json 48
+2026-06-11 00:47:07.767 -07:00 [INF] CORS policy execution successful.
+2026-06-11 00:47:07.793 -07:00 [INF] Executing endpoint 'Backend.Api.Controllers.KycController.CreateKycTierOne (Backend.Api)'
+2026-06-11 00:47:07.796 -07:00 [INF] Route matched with {action = "CreateKycTierOne", controller = "Kyc"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[Backend.Application.Common.Results.BaseResult]] CreateKycTierOne(Backend.Application.DTOs.Kyc.CreateKycTierOneDto, System.Threading.CancellationToken) on controller Backend.Api.Controllers.KycController (Backend.Api).
+2026-06-11 00:47:07.804 -07:00 [INF] Executing ObjectResult, writing value of type 'Backend.Application.Common.Results.BaseResult'.
+2026-06-11 00:47:07.815 -07:00 [INF] Executed action Backend.Api.Controllers.KycController.CreateKycTierOne (Backend.Api) in 13.725ms
+2026-06-11 00:47:07.820 -07:00 [INF] Executed endpoint 'Backend.Api.Controllers.KycController.CreateKycTierOne (Backend.Api)'
+2026-06-11 00:47:07.825 -07:00 [INF] Request finished HTTP/1.1 POST http://localhost:5014/api/v1/kyc/create-tier-one - 400 null application/json; charset=utf-8 79.7418ms
+2026-06-11 00:47:12.271 -07:00 [INF] Request starting HTTP/1.1 POST http://localhost:5014/api/v1/kyc/create-tier-one - application/json 49
+2026-06-11 00:47:12.309 -07:00 [INF] CORS policy execution successful.
+2026-06-11 00:47:12.323 -07:00 [INF] Executing endpoint 'Backend.Api.Controllers.KycController.CreateKycTierOne (Backend.Api)'
+2026-06-11 00:47:12.326 -07:00 [INF] Route matched with {action = "CreateKycTierOne", controller = "Kyc"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[Backend.Application.Common.Results.BaseResult]] CreateKycTierOne(Backend.Application.DTOs.Kyc.CreateKycTierOneDto, System.Threading.CancellationToken) on controller Backend.Api.Controllers.KycController (Backend.Api).
+2026-06-11 00:47:12.331 -07:00 [INF] Executing ObjectResult, writing value of type 'Backend.Application.Common.Results.BaseResult'.
+2026-06-11 00:47:12.334 -07:00 [INF] Executed action Backend.Api.Controllers.KycController.CreateKycTierOne (Backend.Api) in 4.8316ms
+2026-06-11 00:47:12.340 -07:00 [INF] Executed endpoint 'Backend.Api.Controllers.KycController.CreateKycTierOne (Backend.Api)'
+2026-06-11 00:47:12.343 -07:00 [INF] Request finished HTTP/1.1 POST http://localhost:5014/api/v1/kyc/create-tier-one - 400 null application/json; charset=utf-8 72.7262ms
+2026-06-11 00:47:16.392 -07:00 [INF] Request starting HTTP/1.1 POST http://localhost:5014/api/v1/kyc/create-tier-one - application/json 50
+2026-06-11 00:47:16.407 -07:00 [INF] CORS policy execution successful.
+2026-06-11 00:47:16.420 -07:00 [INF] Executing endpoint 'Backend.Api.Controllers.KycController.CreateKycTierOne (Backend.Api)'
+2026-06-11 00:47:16.422 -07:00 [INF] Route matched with {action = "CreateKycTierOne", controller = "Kyc"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[Backend.Application.Common.Results.BaseResult]] CreateKycTierOne(Backend.Application.DTOs.Kyc.CreateKycTierOneDto, System.Threading.CancellationToken) on controller Backend.Api.Controllers.KycController (Backend.Api).
+2026-06-11 00:47:16.615 -07:00 [INF] Executed DbCommand (28ms) [Parameters=[@__request_UserId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT k."Id", k."ApprovedAt", k."BVN", k."CreatedAt", k."CreatedBy", k."DeletedAt", k."DeletedBy", k."IdDocumentUrl", k."IsDeleted", k."ModifiedAt", k."ModifiedBy", k."NIN", k."RiskScore", k."SelfieUrl", k."UserId", k."VerificationProvider", k."VerificationStatus"
+FROM "KycProfiles" AS k
+WHERE NOT (k."IsDeleted") AND k."UserId" = @__request_UserId_0
+LIMIT 1
+2026-06-11 00:47:16.727 -07:00 [INF] Executing ObjectResult, writing value of type 'Backend.Application.Common.Results.BaseResult'.
+2026-06-11 00:47:16.735 -07:00 [INF] Executed action Backend.Api.Controllers.KycController.CreateKycTierOne (Backend.Api) in 301.5938ms
+2026-06-11 00:47:16.739 -07:00 [INF] Executed endpoint 'Backend.Api.Controllers.KycController.CreateKycTierOne (Backend.Api)'
+2026-06-11 00:47:16.754 -07:00 [INF] Request finished HTTP/1.1 POST http://localhost:5014/api/v1/kyc/create-tier-one - 400 null application/json; charset=utf-8 362.2155ms
+2026-06-11 00:47:21.234 -07:00 [INF] Request starting HTTP/1.1 POST http://localhost:5014/api/v1/kyc/create-tier-one - application/json 50
+2026-06-11 00:47:21.274 -07:00 [INF] CORS policy execution successful.
+2026-06-11 00:47:21.279 -07:00 [INF] Executing endpoint 'Backend.Api.Controllers.KycController.CreateKycTierOne (Backend.Api)'
+2026-06-11 00:47:21.281 -07:00 [INF] Route matched with {action = "CreateKycTierOne", controller = "Kyc"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[Backend.Application.Common.Results.BaseResult]] CreateKycTierOne(Backend.Application.DTOs.Kyc.CreateKycTierOneDto, System.Threading.CancellationToken) on controller Backend.Api.Controllers.KycController (Backend.Api).
+2026-06-11 00:47:21.308 -07:00 [INF] Executed DbCommand (1ms) [Parameters=[@__request_UserId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT k."Id", k."ApprovedAt", k."BVN", k."CreatedAt", k."CreatedBy", k."DeletedAt", k."DeletedBy", k."IdDocumentUrl", k."IsDeleted", k."ModifiedAt", k."ModifiedBy", k."NIN", k."RiskScore", k."SelfieUrl", k."UserId", k."VerificationProvider", k."VerificationStatus"
+FROM "KycProfiles" AS k
+WHERE NOT (k."IsDeleted") AND k."UserId" = @__request_UserId_0
+LIMIT 1
+2026-06-11 00:47:21.316 -07:00 [INF] Executing ObjectResult, writing value of type 'Backend.Application.Common.Results.BaseResult'.
+2026-06-11 00:47:21.318 -07:00 [INF] Executed action Backend.Api.Controllers.KycController.CreateKycTierOne (Backend.Api) in 34.0116ms
+2026-06-11 00:47:21.322 -07:00 [INF] Executed endpoint 'Backend.Api.Controllers.KycController.CreateKycTierOne (Backend.Api)'
+2026-06-11 00:47:21.324 -07:00 [INF] Request finished HTTP/1.1 POST http://localhost:5014/api/v1/kyc/create-tier-one - 400 null application/json; charset=utf-8 89.9138ms
+2026-06-11 00:47:22.043 -07:00 [INF] Request starting HTTP/1.1 POST http://localhost:5014/api/v1/kyc/create-tier-one - application/json 50
+2026-06-11 00:47:22.054 -07:00 [INF] CORS policy execution successful.
+2026-06-11 00:47:22.064 -07:00 [INF] Executing endpoint 'Backend.Api.Controllers.KycController.CreateKycTierOne (Backend.Api)'
+2026-06-11 00:47:22.067 -07:00 [INF] Route matched with {action = "CreateKycTierOne", controller = "Kyc"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[Backend.Application.Common.Results.BaseResult]] CreateKycTierOne(Backend.Application.DTOs.Kyc.CreateKycTierOneDto, System.Threading.CancellationToken) on controller Backend.Api.Controllers.KycController (Backend.Api).
+2026-06-11 00:47:22.096 -07:00 [INF] Executed DbCommand (1ms) [Parameters=[@__request_UserId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT k."Id", k."ApprovedAt", k."BVN", k."CreatedAt", k."CreatedBy", k."DeletedAt", k."DeletedBy", k."IdDocumentUrl", k."IsDeleted", k."ModifiedAt", k."ModifiedBy", k."NIN", k."RiskScore", k."SelfieUrl", k."UserId", k."VerificationProvider", k."VerificationStatus"
+FROM "KycProfiles" AS k
+WHERE NOT (k."IsDeleted") AND k."UserId" = @__request_UserId_0
+LIMIT 1
+2026-06-11 00:47:22.103 -07:00 [INF] Executing ObjectResult, writing value of type 'Backend.Application.Common.Results.BaseResult'.
+2026-06-11 00:47:22.106 -07:00 [INF] Executed action Backend.Api.Controllers.KycController.CreateKycTierOne (Backend.Api) in 28.0205ms
+2026-06-11 00:47:22.112 -07:00 [INF] Executed endpoint 'Backend.Api.Controllers.KycController.CreateKycTierOne (Backend.Api)'
+2026-06-11 00:47:22.115 -07:00 [INF] Request finished HTTP/1.1 POST http://localhost:5014/api/v1/kyc/create-tier-one - 400 null application/json; charset=utf-8 71.906ms
+2026-06-11 00:47:22.684 -07:00 [INF] Request starting HTTP/1.1 POST http://localhost:5014/api/v1/kyc/create-tier-one - application/json 50
+2026-06-11 00:47:22.700 -07:00 [INF] CORS policy execution successful.
+2026-06-11 00:47:22.705 -07:00 [INF] Executing endpoint 'Backend.Api.Controllers.KycController.CreateKycTierOne (Backend.Api)'
+2026-06-11 00:47:22.708 -07:00 [INF] Route matched with {action = "CreateKycTierOne", controller = "Kyc"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[Backend.Application.Common.Results.BaseResult]] CreateKycTierOne(Backend.Application.DTOs.Kyc.CreateKycTierOneDto, System.Threading.CancellationToken) on controller Backend.Api.Controllers.KycController (Backend.Api).
+2026-06-11 00:47:22.715 -07:00 [INF] Executed DbCommand (1ms) [Parameters=[@__request_UserId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT k."Id", k."ApprovedAt", k."BVN", k."CreatedAt", k."CreatedBy", k."DeletedAt", k."DeletedBy", k."IdDocumentUrl", k."IsDeleted", k."ModifiedAt", k."ModifiedBy", k."NIN", k."RiskScore", k."SelfieUrl", k."UserId", k."VerificationProvider", k."VerificationStatus"
+FROM "KycProfiles" AS k
+WHERE NOT (k."IsDeleted") AND k."UserId" = @__request_UserId_0
+LIMIT 1
+2026-06-11 00:47:22.719 -07:00 [INF] Executing ObjectResult, writing value of type 'Backend.Application.Common.Results.BaseResult'.
+2026-06-11 00:47:22.727 -07:00 [INF] Executed action Backend.Api.Controllers.KycController.CreateKycTierOne (Backend.Api) in 13.8947ms
+2026-06-11 00:47:22.730 -07:00 [INF] Executed endpoint 'Backend.Api.Controllers.KycController.CreateKycTierOne (Backend.Api)'
+2026-06-11 00:47:22.732 -07:00 [INF] Request finished HTTP/1.1 POST http://localhost:5014/api/v1/kyc/create-tier-one - 400 null application/json; charset=utf-8 48.5819ms
+2026-06-11 00:47:23.403 -07:00 [INF] Request starting HTTP/1.1 POST http://localhost:5014/api/v1/kyc/create-tier-one - application/json 50
+2026-06-11 00:47:23.407 -07:00 [INF] CORS policy execution successful.
+2026-06-11 00:47:23.415 -07:00 [INF] Executing endpoint 'Backend.Api.Controllers.KycController.CreateKycTierOne (Backend.Api)'
+2026-06-11 00:47:23.420 -07:00 [INF] Route matched with {action = "CreateKycTierOne", controller = "Kyc"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[Backend.Application.Common.Results.BaseResult]] CreateKycTierOne(Backend.Application.DTOs.Kyc.CreateKycTierOneDto, System.Threading.CancellationToken) on controller Backend.Api.Controllers.KycController (Backend.Api).
+2026-06-11 00:47:23.428 -07:00 [INF] Executed DbCommand (1ms) [Parameters=[@__request_UserId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT k."Id", k."ApprovedAt", k."BVN", k."CreatedAt", k."CreatedBy", k."DeletedAt", k."DeletedBy", k."IdDocumentUrl", k."IsDeleted", k."ModifiedAt", k."ModifiedBy", k."NIN", k."RiskScore", k."SelfieUrl", k."UserId", k."VerificationProvider", k."VerificationStatus"
+FROM "KycProfiles" AS k
+WHERE NOT (k."IsDeleted") AND k."UserId" = @__request_UserId_0
+LIMIT 1
+2026-06-11 00:47:23.432 -07:00 [INF] Executing ObjectResult, writing value of type 'Backend.Application.Common.Results.BaseResult'.
+2026-06-11 00:47:23.436 -07:00 [INF] Executed action Backend.Api.Controllers.KycController.CreateKycTierOne (Backend.Api) in 13.2195ms
+2026-06-11 00:47:23.442 -07:00 [INF] Executed endpoint 'Backend.Api.Controllers.KycController.CreateKycTierOne (Backend.Api)'
+2026-06-11 00:47:23.445 -07:00 [INF] Request finished HTTP/1.1 POST http://localhost:5014/api/v1/kyc/create-tier-one - 400 null application/json; charset=utf-8 41.6552ms
+2026-06-11 00:47:28.808 -07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5014/swagger/index.html - null null
+2026-06-11 00:47:28.884 -07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5014/swagger/index.html - 200 null text/html;charset=utf-8 75.476ms
+2026-06-11 00:47:29.159 -07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5014/swagger/v1/swagger.json - null null
+2026-06-11 00:47:29.305 -07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5014/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 145.9417ms
+2026-06-11 00:57:27.770 -07:00 [INF] Request starting HTTP/1.1 POST http://localhost:5014/api/v1/auth/resend-token - application/json 34
+2026-06-11 00:57:27.822 -07:00 [INF] CORS policy execution successful.
+2026-06-11 00:57:27.828 -07:00 [INF] Executing endpoint 'Backend.Api.Controllers.AuthController.ResendToken (Backend.Api)'
+2026-06-11 00:57:27.843 -07:00 [INF] Route matched with {action = "ResendToken", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[Backend.Application.Common.Results.BaseResult]] ResendToken(Backend.Application.DTOs.Auth.ResendTokenDto, System.Threading.CancellationToken) on controller Backend.Api.Controllers.AuthController (Backend.Api).
+2026-06-11 00:57:27.946 -07:00 [INF] Executed DbCommand (5ms) [Parameters=[@__request_Email_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT u."Id", u."AccessFailedCount", u."ConcurrencyStamp", u."CreatedAt", u."DateOfBirth", u."DeletedAt", u."Email", u."EmailConfirmed", u."FirstName", u."Gender", u."IsDeleted", u."KycTier", u."LastLoginAt", u."LastName", u."LockoutEnabled", u."LockoutEnd", u."MiddleName", u."ModifiedAt", u."NormalizedEmail", u."NormalizedUserName", u."PasswordChangedAt", u."PasswordHash", u."PhoneNumber", u."PhoneNumberConfirmed", u."ProfileImageUrl", u."SecurityStamp", u."Status", u."TwoFactorEnabled", u."UserName"
+FROM "Users" AS u
+WHERE NOT (u."IsDeleted") AND u."Email" = @__request_Email_0
+LIMIT 1
+2026-06-11 00:57:28.116 -07:00 [INF] Executed DbCommand (153ms) [Parameters=[@__user_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT v."Id", v."CreatedAt", v."CreatedBy", v."DeletedAt", v."DeletedBy", v."ExpiresAt", v."IsDeleted", v."IsUsed", v."ModifiedAt", v."ModifiedBy", v."Token", v."TokenType", v."UsedAt", v."UserId"
+FROM "VerificationTokens" AS v
+WHERE v."UserId" = @__user_Id_0 AND v."TokenType" = 0
+LIMIT 1
+2026-06-11 00:57:28.268 -07:00 [INF] Executed DbCommand (6ms) [Parameters=[@p13='?' (DbType = Int32), @p0='?' (DbType = DateTime), @p1='?', @p2='?' (DbType = DateTime), @p3='?', @p4='?' (DbType = DateTime), @p5='?' (DbType = Boolean), @p6='?' (DbType = Boolean), @p7='?' (DbType = DateTime), @p8='?', @p9='?', @p10='?' (DbType = Int32), @p11='?' (DbType = DateTime), @p12='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+UPDATE "VerificationTokens" SET "CreatedAt" = @p0, "CreatedBy" = @p1, "DeletedAt" = @p2, "DeletedBy" = @p3, "ExpiresAt" = @p4, "IsDeleted" = @p5, "IsUsed" = @p6, "ModifiedAt" = @p7, "ModifiedBy" = @p8, "Token" = @p9, "TokenType" = @p10, "UsedAt" = @p11, "UserId" = @p12
+WHERE "Id" = @p13;
+2026-06-11 00:57:32.299 -07:00 [INF] Email sent to user1@example.com with subject Email Verification OTP
+2026-06-11 00:57:32.310 -07:00 [INF] Executing ObjectResult, writing value of type 'Backend.Application.Common.Results.BaseResult'.
+2026-06-11 00:57:32.322 -07:00 [INF] Executed action Backend.Api.Controllers.AuthController.ResendToken (Backend.Api) in 4473.0098ms
+2026-06-11 00:57:32.349 -07:00 [INF] Executed endpoint 'Backend.Api.Controllers.AuthController.ResendToken (Backend.Api)'
+2026-06-11 00:57:32.354 -07:00 [INF] Request finished HTTP/1.1 POST http://localhost:5014/api/v1/auth/resend-token - 200 null application/json; charset=utf-8 4583.8193ms
+2026-06-11 01:03:07.679 -07:00 [INF] Application is shutting down...

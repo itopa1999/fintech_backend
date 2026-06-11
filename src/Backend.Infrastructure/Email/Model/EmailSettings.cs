@@ -15,4 +15,5 @@ public sealed class EmailSettings
     public required string Password { get; set; }
 
     public bool UseSSL { get; set; }
+    public bool UseConsoleEmail { get; set; }
 }

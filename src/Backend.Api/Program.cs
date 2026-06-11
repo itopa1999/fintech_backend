@@ -27,6 +27,7 @@ using System.Net;
 using System.Security.Claims;
 using Infrastructure.Email.Models;
 using Backend.Infrastructure.Email;
+using Backend.Infrastructure.Services;
 // using Hangfire;
 // using Hangfire.PostgreSql;
 
@@ -305,6 +306,24 @@ builder.Services.AddScoped<IJwtTokenGenerator, JwtTokenGenerator>();
 builder.Services.AddScoped<CacheService>();
 builder.Services.AddScoped<ITokenService, TokenService>();
 builder.Services.AddScoped<IEmailService, EmailService>();
+builder.Services.AddScoped<IFileStorageService>(provider =>
+{
+    var env = provider.GetRequiredService<IWebHostEnvironment>();
+    var config = provider.GetRequiredService<IConfiguration>();
+    var logger = provider.GetRequiredService<ILogger<LocalFileStorageService>>();
+
+    if (env.IsDevelopment())
+    {
+        return new LocalFileStorageService(env, logger);
+    }
+    else
+    {
+        // For production – configure AWS SDK
+        // var awsOptions = config.GetAWSOptions();
+        // var s3Client = awsOptions.CreateServiceClient<IAmazonS3>();
+        // return new S3FileStorageService(s3Client, config, provider.GetRequiredService<ILogger<S3FileStorageService>>());
+    }
+});
 var app = builder.Build();
 
 app.UseMiddleware<ExceptionHandlingMiddleware>();
